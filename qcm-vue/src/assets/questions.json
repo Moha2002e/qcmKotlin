@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "question": "Concernant Intent, lesquelles sont vraies ?",
+    "options": [
+      "A. Un Intent explicite cible une classe précise",
+      "B. Un Intent implicite nécessite toujours un ComponentName",
+      "C. Les Intent implicites utilisent les IntentFilter",
+      "D. Un Intent ne peut pas transporter d’objets complexes",
+      "E. Un Intent peut être utilisé pour démarrer un service"
+    ],
+    "correctAnswers": [0, 2, 4]
+  },
+  {
+    "id": 2,
+    "question": "Quelle(s) affirmation(s) sur PendingIntent sont correctes ?",
+    "options": [
+      "A. Il permet à une application externe d’exécuter une action dans votre contexte",
+      "B. Il est toujours lié à une Activity",
+      "C. Il est requis pour les notifications",
+      "D. Il remplace un Intent",
+      "E. Il peut encapsuler un Broadcast"
+    ],
+    "correctAnswers": [0, 2, 4]
+  },
+  {
+    "id": 3,
+    "question": "Concernant le cycle de vie d’une Activity",
+    "options": [
+      "A. onCreate() est appelé une seule fois par instance",
+      "B. onPause() garantit que l’activité est détruite",
+      "C. onStop() signifie que l’UI n’est plus visible",
+      "D. onRestart() est appelé après onCreate()",
+      "E. onDestroy() peut ne jamais être appelé"
+    ],
+    "correctAnswers": [2, 4]
+  },
+  {
+    "id": 4,
+    "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les constantes Intent.ACTION_* en Android ?",
+    "options": [
+      "A. Elles représentent des actions standard reconnues par le système Android",
+      "B. Elles sont principalement utilisées avec des Intents implicites",
+      "C. Intent.ACTION_* permet de cibler directement une Activity précise",
+      "D. Elles peuvent être associées à des IntentFilter dans le manifeste",
+      "E. Elles remplacent l’utilisation des ComponentName"
+    ],
+    "correctAnswers": [0, 1, 3]
+  },
+  {
+    "id": 5,
+    "question": "À propos des Fragment",
+    "options": [
+      "A. Un fragment doit être attaché à une activité",
+      "B. Un fragment possède son propre Context",
+      "C. Un fragment a un cycle de vie distinct",
+      "D. Les fragments sont dépréciés",
+      "E. Un fragment peut survivre à une rotation"
+    ],
+    "correctAnswers": [2, 4]
+  },
+  {
+    "id": 6,
+    "question": "Quelle méthode correspond à l’initialisation de la vue d’un fragment ?",
+    "options": [
+      "A. onAttach()",
+      "B. onCreateView()",
+      "C. onCreate()",
+      "D. onViewCreated()",
+      "E. onStart()"
+    ],
+    "correctAnswers": [3]
+  },
+  {
+    "id": 7,
+    "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les expressions lambda en Kotlin ?",
+    "options": [
+      "A. Une lambda est une fonction anonyme",
+      "B. Une lambda peut être passée comme paramètre à une fonction",
+      "C. Une lambda ne peut pas capturer de variables externes",
+      "D. Le type d’une lambda peut être inféré par le compilateur",
+      "E. Une lambda ne peut pas retourner de valeur"
+    ],
+    "correctAnswers": [0, 1, 3]
+  },
+  {
+    "id": 8,
+    "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les fonctions d’ordre supérieur en Kotlin ?",
+    "options": [
+      "A. Une fonction d’ordre supérieur peut prendre une ou plusieurs fonctions en paramètre",
+      "B. Une fonction d’ordre supérieur peut retourner une fonction",
+      "C. Une fonction d’ordre supérieur doit obligatoirement être inline",
+      "D. Les fonctions d’ordre supérieur sont largement utilisées avec les lambdas",
+      "E. Une fonction d’ordre supérieur ne peut pas être stockée dans une variable"
+    ],
+    "correctAnswers": [0, 1, 3]
+  },
+  {
+    "id": 9,
+    "question": "À propos de lateinit",
+    "options": [
+      "A. Uniquement pour les types non-null",
+      "B. Ne fonctionne pas avec les types primitifs",
+      "C. Peut être utilisé avec val",
+      "D. Provoque une exception si non initialisé",
+      "E. Compatible avec lazy"
+    ],
+    "correctAnswers": [0, 1, 3]
+  },
+  {
+    "id": 10,
+    "question": "Différence entre lazy et lateinit",
+    "options": [
+      "A. lazy est thread-safe par défaut",
+      "B. lazy est uniquement pour val",
+      "C. lateinit ne supporte pas les primitives",
+      "D. lateinit est évalué à l’accès",
+      "E. lazy peut être réassigné"
+    ],
+    "correctAnswers": [0, 1, 2]
+  },
+  {
+    "id": 11,
+    "question": "À propos des coroutines",
+    "options": [
+      "A. Une coroutine n’est pas un thread",
+      "B. Une coroutine peut être suspendue",
+      "C. Une coroutine bloque toujours le thread",
+      "D. suspend n’indique pas l’asynchronisme",
+      "E. Une coroutine survit à la mort du process"
+    ],
+    "correctAnswers": [0, 1, 3]
+  },
+  {
+    "id": 12,
+    "question": "Que fait exactement suspend ?",
+    "options": [
+      "A. Rend la fonction asynchrone",
+      "B. Crée un thread",
+      "C. Permet la suspension sans bloquer",
+      "D. Peut appeler d’autres fonctions suspendues",
+      "E. Garantit un contexte IO"
+    ],
+    "correctAnswers": [2, 3]
+  },
+  {
+    "id": 13,
+    "question": "Concernant runBlocking",
+    "options": [
+      "A. Bloque le thread courant",
+      "B. À utiliser en production Android",
+      "C. Utile pour les tests",
+      "D. Remplace launch",
+      "E. Fonctionne uniquement sur Main thread"
+    ],
+    "correctAnswers": [0, 2]
+  },
+  {
+    "id": 14,
+    "question": "Quelle est la différence entre launch et async ?",
+    "options": [
+      "A. launch retourne une valeur",
+      "B. async retourne un Deferred",
+      "C. async nécessite await()",
+      "D. launch bloque",
+      "E. async ne peut pas être annulé"
+    ],
+    "correctAnswers": [1, 2]
+  },
+  {
+    "id": 15,
+    "question": "Concernant Dispatcher.Main",
+    "options": [
+      "A. Exécute sur le thread UI",
+      "B. Peut être utilisé pour IO intensif",
+      "C. Requiert Dispatchers.Main.immediate pour éviter un post",
+      "D. Est toujours disponible",
+      "E. Nécessite Android"
+    ],
+    "correctAnswers": [0, 2, 4]
+  },
+  {
+    "id": 16,
+    "question": "À propos de l’annulation (cancel)",
+    "options": [
+      "A. Elle est coopérative",
+      "B. Elle stoppe immédiatement la coroutine",
+      "C. Les suspending functions la respectent",
+      "D. Elle tue le thread",
+      "E. Elle propage aux enfants"
+    ],
+    "correctAnswers": [0, 2, 4]
+  },
+  {
+    "id": 17,
+    "question": "Quelle exception est levée lors d’une annulation ?",
+    "options": [
+      "A. TimeoutException",
+      "B. IllegalStateException",
+      "C. CancellationException",
+      "D. IOException",
+      "E. RuntimeException"
+    ],
+    "correctAnswers": [2]
+  },
+  {
+    "id": 18,
+    "question": "Quelle est la portée correcte pour une coroutine liée à un Fragment ?",
+    "options": [
+      "A. GlobalScope",
+      "B. MainScope",
+      "C. viewLifecycleOwner.lifecycleScope",
+      "D. activityScope",
+      "E. applicationScope"
+    ],
+    "correctAnswers": [2]
+  },
+  {
+    "id": 19,
+    "question": "Concernant RecyclerView",
+    "options": [
+      "A. Il recycle les ViewHolder",
+      "B. Il est plus performant que ListView",
+      "C. Il impose un layout vertical",
+      "D. Il nécessite un Adapter",
+      "E. Il gère automatiquement les clics"
+    ],
+    "correctAnswers": [0, 1, 3]
+  },
+  {
+    "id": 20,
+    "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les fonctions de portée (let, run, apply, also, with) en Kotlin ?",
+    "options": [
+      "A. Les fonctions de portée permettent d’exécuter un bloc de code dans le contexte d’un objet",
+      "B. Elles diffèrent par la valeur de retour et la manière d’accéder au receiver (this ou it)",
+      "C. Toutes les fonctions de portée retournent toujours l’objet receiver",
+      "D. Elles améliorent la lisibilité et réduisent le code répétitif",
+      "E. Les fonctions de portée remplacent les classes et les fonctions classiques"
+    ],
+    "correctAnswers": [0, 1, 3]
+  }
+]
