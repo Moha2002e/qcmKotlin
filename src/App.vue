@@ -28,15 +28,21 @@ const selectSeries = (seriesNumber) => {
   startQuiz();
 };
 
+const userAnswers = ref([]);
+
 const startQuiz = () => {
   currentQuestionIndex.value = 0;
   score.value = 0;
+  userAnswers.value = [];
   gameState.value = 'playing';
 };
 
 const handleAnswer = (selectedIndices) => {
   const correctIndices = currentQuestion.value.correctAnswers.slice().sort((a, b) => a - b);
   const userIndices = selectedIndices.slice().sort((a, b) => a - b);
+
+  // Store user's answer
+  userAnswers.value.push(selectedIndices);
 
   const isCorrect = JSON.stringify(correctIndices) === JSON.stringify(userIndices);
 
@@ -60,6 +66,7 @@ const backToMenu = () => {
   currentSeries.value = 0;
   score.value = 0;
   currentQuestionIndex.value = 0;
+  userAnswers.value = [];
 };
 </script>
 
@@ -99,6 +106,8 @@ const backToMenu = () => {
         v-else-if="gameState === 'result'"
         :score="score"
         :total="currentSeriesQuestions.length"
+        :questions="currentSeriesQuestions"
+        :user-answers="userAnswers"
         @retry="retryQuiz"
         key="result"
       />
