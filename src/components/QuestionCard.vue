@@ -20,12 +20,28 @@ const emit = defineEmits(['submit-answer', 'next-question']);
 
 const selectedIndices = ref([]);
 const isSubmitted = ref(false);
+const shuffledOptions = ref([]);
 
-// Reset selection when question changes
-watch(() => props.question, () => {
+const shuffleArray = (array) => {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+};
+
+// Initialize and shuffle options when question changes
+watch(() => props.question, (newQuestion) => {
   selectedIndices.value = [];
   isSubmitted.value = false;
-});
+  if (newQuestion && newQuestion.options) {
+      const opts = newQuestion.options.map((text, idx) => ({ text, originalIndex: idx }));
+      shuffledOptions.value = shuffleArray(opts);
+  } else {
+      shuffledOptions.value = [];
+  }
+}, { immediate: true });
 
 const toggleOption = (index) => {
   if (isSubmitted.value) return; // Disable changes after submit
@@ -60,7 +76,6 @@ const getOptionClass = (index) => {
   }
   return 'dimmed'; // Dim other options
 };
-
 const submit = () => {
   if (selectedIndices.value.length === 0) return;
   isSubmitted.value = true;
@@ -89,18 +104,18 @@ const isCorrectGlobal = computed(() => {
 
     <div class="options-grid">
       <div 
-        v-for="(option, index) in question.options" 
-        :key="index"
+        v-for="(optionObj, index) in shuffledOptions" 
+        :key="optionObj.originalIndex"
         class="option-item"
-        :class="getOptionClass(index)"
-        @click="toggleOption(index)"
+        :class="getOptionClass(optionObj.originalIndex)"
+        @click="toggleOption(optionObj.originalIndex)"
       >
         <div class="checkbox">
-            <span v-if="isSubmitted && isOptionCorrect(index)">✓</span>
-            <span v-else-if="isSubmitted && isOptionSelected(index) && !isOptionCorrect(index)">✕</span>
-            <span v-else-if="isOptionSelected(index)">✓</span>
+            <span v-if="isSubmitted && isOptionCorrect(optionObj.originalIndex)">✓</span>
+            <span v-else-if="isSubmitted && isOptionSelected(optionObj.originalIndex) && !isOptionCorrect(optionObj.originalIndex)">✕</span>
+            <span v-else-if="isOptionSelected(optionObj.originalIndex)">✓</span>
         </div>
-        <span class="option-text">{{ option }}</span>
+        <span class="option-text">{{ optionObj.text }}</span>
       </div>
     </div>
 

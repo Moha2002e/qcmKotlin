@@ -17,15 +17,26 @@ const currentSeries = ref(0);
 const currentQuestionIndex = ref(0);
 const score = ref(0);
 const gameState = ref('menu'); // 'menu', 'playing', 'result', 'flashcards', 'synthesis'
+const activeQuestions = ref([]); // Stores the shuffled questions for the current game
 
-// Get questions for the selected series
+// Get questions for the selected series (Source data)
 const currentSeriesQuestions = computed(() => {
   const start = (currentSeries.value - 1) * SERIES_SIZE;
   const end = Math.min(start + SERIES_SIZE, allQuestions.length);
   return allQuestions.slice(start, end);
 });
 
-const currentQuestion = computed(() => currentSeriesQuestions.value[currentQuestionIndex.value]);
+// Helper: Fisher-Yates Shuffle
+const shuffleArray = (array) => {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+};
+
+const currentQuestion = computed(() => activeQuestions.value[currentQuestionIndex.value]);
 
 const totalSeries = computed(() => Math.ceil(allQuestions.length / SERIES_SIZE));
 
@@ -38,15 +49,16 @@ const openFlashcards = () => {
   gameState.value = 'flashcards';
 };
 
-
-
-const userAnswers = ref([]);
-
 const openSynthesis = () => {
   gameState.value = 'synthesis';
 };
 
+const userAnswers = ref([]);
+
 const startQuiz = () => {
+  // Shuffle the questions for this session
+  activeQuestions.value = shuffleArray(currentSeriesQuestions.value);
+  
   currentQuestionIndex.value = 0;
   score.value = 0;
   userAnswers.value = [];
@@ -57,7 +69,12 @@ const handleAnswer = (selectedIndices) => {
   const correctIndices = currentQuestion.value.correctAnswers.slice().sort((a, b) => a - b);
   const userIndices = selectedIndices.slice().sort((a, b) => a - b);
 
-  // Store user's answer
+  // Store user's answer (we store the result object for the summary)
+  // Note: We need to match the structure expected by ResultCard.
+  // ResultCard expects userAnswers to mirror the order of 'questions'.
+  // Since we shuffled, we must be careful. 
+  // Actually ResultCard takes :questions="currentSeriesQuestions". 
+  // If we shuffle, ResultCard must receive the SHUFFLED list to match user answers.
   userAnswers.value.push(selectedIndices);
 
   const isCorrect = JSON.stringify(correctIndices) === JSON.stringify(userIndices);
@@ -68,7 +85,7 @@ const handleAnswer = (selectedIndices) => {
 };
 
 const nextQuestion = () => {
-  if (currentQuestionIndex.value < currentSeriesQuestions.value.length - 1) {
+  if (currentQuestionIndex.value < activeQuestions.value.length - 1) {
     currentQuestionIndex.value++;
   } else {
     gameState.value = 'result';
@@ -153,7 +170,7 @@ const prevFlashcard = () => {
         v-else-if="gameState === 'playing' && currentQuestion"
         :question="currentQuestion"
         :question-number="currentQuestionIndex + 1"
-        :total-questions="currentSeriesQuestions.length"
+        :total-questions="activeQuestions.length"
         @submit-answer="handleAnswer"
         @next-question="nextQuestion"
         key="playing"
@@ -163,8 +180,8 @@ const prevFlashcard = () => {
       <ResultCard 
         v-else-if="gameState === 'result'"
         :score="score"
-        :total="currentSeriesQuestions.length"
-        :questions="currentSeriesQuestions"
+        :total="activeQuestions.length"
+        :questions="activeQuestions"
         :user-answers="userAnswers"
         @retry="retryQuiz"
         key="result"
