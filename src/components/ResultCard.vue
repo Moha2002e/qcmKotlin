@@ -383,4 +383,47 @@ const generatePDF = () => {
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
 }
+
+@media (max-width: 640px) {
+  .result-card {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .message {
+    font-size: 1rem;
+  }
+
+  .score-container {
+    width: 120px;
+  }
+
+  .action-buttons {
+    width: 100%;
+  }
+
+  .correction-header {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative; /* Unstick header on mobile to save space or keep sticky with background */
+    top: 0;
+  }
+  
+  .correction-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .correction-item {
+    padding: 1rem;
+  }
+}
 </style>

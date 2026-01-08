@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, computed } from 'vue';
 
 const props = defineProps({
   question: {
@@ -16,16 +16,20 @@ const props = defineProps({
   }
 });
 
-const emit = defineEmits(['submit-answer']);
+const emit = defineEmits(['submit-answer', 'next-question']);
 
 const selectedIndices = ref([]);
+const isSubmitted = ref(false);
 
 // Reset selection when question changes
 watch(() => props.question, () => {
   selectedIndices.value = [];
+  isSubmitted.value = false;
 });
 
 const toggleOption = (index) => {
+  if (isSubmitted.value) return; // Disable changes after submit
+
   if (selectedIndices.value.includes(index)) {
     selectedIndices.value = selectedIndices.value.filter(i => i !== index);
   } else {
@@ -34,10 +38,44 @@ const toggleOption = (index) => {
   selectedIndices.value.sort((a, b) => a - b);
 };
 
+const isOptionCorrect = (index) => {
+  return props.question.correctAnswers.includes(index);
+};
+
+const isOptionSelected = (index) => {
+  return selectedIndices.value.includes(index);
+};
+
+const getOptionClass = (index) => {
+  if (!isSubmitted.value) {
+    return isOptionSelected(index) ? 'selected' : '';
+  }
+
+  // Logic for submitted state
+  if (isOptionCorrect(index)) {
+    return 'correct'; // Show green for correct answers
+  }
+  if (isOptionSelected(index) && !isOptionCorrect(index)) {
+    return 'incorrect'; // Show red for wrong user selection
+  }
+  return 'dimmed'; // Dim other options
+};
+
 const submit = () => {
   if (selectedIndices.value.length === 0) return;
+  isSubmitted.value = true;
   emit('submit-answer', selectedIndices.value);
 };
+
+const next = () => {
+  emit('next-question');
+};
+
+const isCorrectGlobal = computed(() => {
+    const correct = props.question.correctAnswers.slice().sort((a, b) => a - b);
+    const user = selectedIndices.value.slice().sort((a, b) => a - b);
+    return JSON.stringify(correct) === JSON.stringify(user);
+});
 </script>
 
 <template>
@@ -53,24 +91,44 @@ const submit = () => {
         v-for="(option, index) in question.options" 
         :key="index"
         class="option-item"
-        :class="{ 'selected': selectedIndices.includes(index) }"
+        :class="getOptionClass(index)"
         @click="toggleOption(index)"
       >
         <div class="checkbox">
-          <span v-if="selectedIndices.includes(index)">✓</span>
+            <span v-if="isSubmitted && isOptionCorrect(index)">✓</span>
+            <span v-else-if="isSubmitted && isOptionSelected(index) && !isOptionCorrect(index)">✕</span>
+            <span v-else-if="isOptionSelected(index)">✓</span>
         </div>
         <span class="option-text">{{ option }}</span>
       </div>
     </div>
 
+    <!-- Feedback Section -->
+    <div v-if="isSubmitted" class="feedback-section" :class="isCorrectGlobal ? 'success' : 'error'">
+        <div class="feedback-header">
+            <span class="feedback-icon">{{ isCorrectGlobal ? 'Correct !' : 'Incorrect' }}</span>
+        </div>
+        <p class="feedback-explanation">
+            {{ question.explanation || "Pas d'explication disponible." }}
+        </p>
+    </div>
+
     <div class="actions">
       <button 
+        v-if="!isSubmitted"
         class="btn-primary" 
         @click="submit"
         :disabled="selectedIndices.length === 0"
         :style="{ opacity: selectedIndices.length === 0 ? 0.5 : 1, cursor: selectedIndices.length === 0 ? 'not-allowed' : 'pointer' }"
       >
         Valider
+      </button>
+      <button 
+        v-else
+        class="btn-primary" 
+        @click="next"
+      >
+        {{ questionNumber === totalQuestions ? 'Voir les résultats' : 'Question Suivante' }} →
       </button>
     </div>
   </div>
@@ -80,6 +138,7 @@ const submit = () => {
 .question-card {
   padding: 2.5rem;
   width: 100%;
+  max-width: 800px; /* Limit width for readability */
   animation: slideIn 0.5s ease-out;
 }
 
@@ -128,7 +187,7 @@ const submit = () => {
   transition: all 0.2s ease;
 }
 
-.option-item:hover {
+.option-item:not(.correct):not(.incorrect):hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.1);
   transform: translateX(5px);
@@ -137,6 +196,20 @@ const submit = () => {
 .option-item.selected {
   background: rgba(99, 102, 241, 0.15);
   border-color: #6366f1;
+}
+
+.option-item.correct {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: #22c55e;
+}
+
+.option-item.incorrect {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: #ef4444;
+}
+
+.option-item.dimmed {
+  opacity: 0.5;
 }
 
 .checkbox {
@@ -149,6 +222,7 @@ const submit = () => {
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
+  flex-shrink: 0;
 }
 
 .option-item.selected .checkbox {
@@ -159,13 +233,91 @@ const submit = () => {
   font-weight: bold;
 }
 
+.option-item.correct .checkbox {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: white;
+}
+
+.option-item.incorrect .checkbox {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: white;
+}
+
 .option-text {
   font-size: 1.1rem;
   color: #e2e8f0;
 }
 
+.feedback-section {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid;
+    animation: fadeIn 0.3s ease;
+}
+
+.feedback-section.success {
+    background: rgba(34, 197, 94, 0.1);
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.feedback-section.error {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.feedback-header {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.feedback-section.success .feedback-header { color: #4ade80; }
+.feedback-section.error .feedback-header { color: #f87171; }
+
+.feedback-explanation {
+    color: #e2e8f0;
+    line-height: 1.5;
+}
+
 .actions {
   display: flex;
   justify-content: flex-end;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .question-card {
+    padding: 1.5rem;
+  }
+
+  .question-text {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .question-badge {
+    font-size: 0.75rem;
+  }
+  
+  .option-item {
+    padding: 0.75rem;
+  }
+
+  .option-text {
+    font-size: 1rem;
+  }
+
+  .feedback-section {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
 }
 </style>

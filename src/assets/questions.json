@@ -13,7 +13,8 @@
       0,
       2,
       4
-    ]
+    ],
+    "explanation": "Un Intent explicite cible bien une classe (A). Les Intent implicites reposent sur des IntentFilters pour trouver le composant adéquat (C). Depuis Android, il est courant d'utiliser des Intents pour démarrer des services (E), bien que startService soit moins utilisé au profit de JobScheduler/WorkManager, c'est techniquement vrai."
   },
   {
     "id": 2,
@@ -29,10 +30,11 @@
       0,
       2,
       4
-    ]
+    ],
+    "explanation": "Le PendingIntent est un jeton donné à une application étrangère (comme le NotificationManager ou l'AlarmManager) lui permettant d'exécuter une action avec les permissions de votre application (A). Il est indispensable pour rendre une notification cliquable (C). Il peut encapsuler un Intent de démarrage d'Activity, de Service ou d'émission de Broadcast (E)."
   },
   {
-    "id": 3,
+    "id": 4,
     "question": "Concernant le cycle de vie d’une Activity",
     "options": [
       "A. onCreate() est appelé une seule fois par instance",
@@ -42,12 +44,14 @@
       "E. onDestroy() peut ne jamais être appelé"
     ],
     "correctAnswers": [
+      0,
       2,
       4
-    ]
+    ],
+    "explanation": "onCreate est le point d'entrée unique (A). onStop est appelé quand l'activité n'est plus visible par l'utilisateur (C). Le système peut tuer le processus sans appeler onDestroy en cas de besoin mémoire urgent, donc onDestroy n'est pas garanti (E)."
   },
   {
-    "id": 4,
+    "id": 5,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les constantes Intent.ACTION_* en Android ?",
     "options": [
       "A. Elles représentent des actions standard reconnues par le système Android",
@@ -60,10 +64,11 @@
       0,
       1,
       3
-    ]
+    ],
+    "explanation": "Ce sont des chaînes standard (A) comme ACTION_VIEW ou ACTION_SEND, utilisées pour des Intents implicites (B) afin que n'importe quelle app compatible (déclarant ce filtre dans son manifeste, D) puisse y répondre."
   },
   {
-    "id": 5,
+    "id": 6,
     "question": "À propos des Fragment",
     "options": [
       "A. Un fragment doit être attaché à une activité",
@@ -73,12 +78,14 @@
       "E. Un fragment peut survivre à une rotation"
     ],
     "correctAnswers": [
+      0,
       2,
       4
-    ]
+    ],
+    "explanation": "Un Fragment vit nécessairement au sein d'une Activity (A) et possède un cycle de vie complexe lié mais distinct de celle-ci (C). Avec setRetainInstance(true) (bien que déprécié au profit des ViewModels), ou simplement via le mécanisme de restauration d'état, l'instance du fragment peut être conservée lors d'une changement de configuration (E)."
   },
   {
-    "id": 6,
+    "id": 7,
     "question": "Quelle méthode correspond à l’initialisation de la vue d’un fragment ?",
     "options": [
       "A. onAttach()",
@@ -88,11 +95,12 @@
       "E. onStart()"
     ],
     "correctAnswers": [
-      3
-    ]
+      1
+    ],
+    "explanation": "onCreateView() est la méthode où vous devez inflater le layout XML et retourner la Vue racine du fragment."
   },
   {
-    "id": 7,
+    "id": 8,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les expressions lambda en Kotlin ?",
     "options": [
       "A. Une lambda est une fonction anonyme",
@@ -105,10 +113,11 @@
       0,
       1,
       3
-    ]
+    ],
+    "explanation": "Une lambda est bien une fonction sans nom (A), très souvent passée en paramètre (B). Kotlin infère son type (D). Contrairement à ce que dit C, elle peut capturer des variables (closure) et elle retourne la valeur de sa dernière expression (donc E est faux)."
   },
   {
-    "id": 8,
+    "id": 9,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les fonctions d’ordre supérieur en Kotlin ?",
     "options": [
       "A. Une fonction d’ordre supérieur peut prendre une ou plusieurs fonctions en paramètre",
@@ -121,10 +130,11 @@
       0,
       1,
       3
-    ]
+    ],
+    "explanation": "C'est la définition même : prend des fonctions en paramètres ou en retourne (A, B). Elles sont conçues pour être utilisées avec des lambdas (D). Elles ne sont pas obligatoirement inline, bien que cela soit recommandé pour les performances."
   },
   {
-    "id": 9,
+    "id": 10,
     "question": "À propos de lateinit",
     "options": [
       "A. Uniquement pour les types non-null",
@@ -137,10 +147,11 @@
       0,
       1,
       3
-    ]
+    ],
+    "explanation": "lateinit s'applique aux variables mutables (var) non-nulles (A). Elle ne supporte pas les types primitifs comme Int ou Boolean (B) car elle se base sur null en interne. Accéder à une propriété lateinit non initialisée lève une UninitializedPropertyAccessException (D)."
   },
   {
-    "id": 10,
+    "id": 11,
     "question": "Différence entre lazy et lateinit",
     "options": [
       "A. lazy est thread-safe par défaut",
@@ -153,10 +164,11 @@
       0,
       1,
       2
-    ]
+    ],
+    "explanation": "Lazy est une délégation pour les constantes (val) (B) qui initialise la valeur au premier accès de manière thread-safe (A). Lateinit est pour les variables (var) et ne marche pas, entre autres, avec les types primitifs (C)."
   },
   {
-    "id": 11,
+    "id": 12,
     "question": "À propos des coroutines",
     "options": [
       "A. Une coroutine n’est pas un thread",
@@ -169,10 +181,11 @@
       0,
       1,
       3
-    ]
+    ],
+    "explanation": "Une coroutine est un 'lightweight thread' géré par l'utilisateur, pas par l'OS (A). Elle peut être suspendue sans bloquer le thread sous-jacent (B). Le mot-clé suspend indique seulement qu'une fonction peut suspendre l'exécution, pas nécessairement qu'elle s'exécute sur un autre thread (D)."
   },
   {
-    "id": 12,
+    "id": 13,
     "question": "Que fait exactement suspend ?",
     "options": [
       "A. Rend la fonction asynchrone",
@@ -184,10 +197,11 @@
     "correctAnswers": [
       2,
       3
-    ]
+    ],
+    "explanation": "Le mot-clé suspend marque une fonction qui peut mettre en pause son exécution sans bloquer le thread courant (C). Seules les fonctions suspendues ou les coroutines peuvent appeler d'autres fonctions suspendues (D)."
   },
   {
-    "id": 13,
+    "id": 14,
     "question": "Concernant runBlocking",
     "options": [
       "A. Bloque le thread courant",
@@ -199,10 +213,11 @@
     "correctAnswers": [
       0,
       2
-    ]
+    ],
+    "explanation": "runBlocking démarre une coroutine et bloque le thread courant jusqu'à sa fin (A). C'est à éviter dans le code de production (pour ne pas figer l'UI), mais c'est très utile pour les tests unitaires ou les scripts (C)."
   },
   {
-    "id": 14,
+    "id": 15,
     "question": "Quelle est la différence entre launch et async ?",
     "options": [
       "A. launch retourne une valeur",
@@ -214,10 +229,11 @@
     "correctAnswers": [
       1,
       2
-    ]
+    ],
+    "explanation": "Async est conçu pour calculer une valeur de manière asynchrone : il retourne un Deferred<T> (B) sur lequel on doit appeler await() pour récupérer le résultat (C). Launch retourne un Job et ne produit pas de résultat."
   },
   {
-    "id": 15,
+    "id": 16,
     "question": "Concernant Dispatcher.Main",
     "options": [
       "A. Exécute sur le thread UI",
@@ -230,10 +246,11 @@
       0,
       2,
       4
-    ]
+    ],
+    "explanation": "Dispatcher.Main utilise le thread principal (UI) d'Android (A). Il n'est disponible que sur les plateformes ayant une UI (Android, JavaFx...), donc E est vrai. Main.immediate est une optimisation pour exécuter la coroutine tout de suite si on est déjà sur le bon thread, évitant un dispatch inutile (C)."
   },
   {
-    "id": 16,
+    "id": 17,
     "question": "À propos de l’annulation (cancel)",
     "options": [
       "A. Elle est coopérative",
@@ -246,10 +263,11 @@
       0,
       2,
       4
-    ]
+    ],
+    "explanation": "L'annulation en Kotlin est coopérative (A) : le code de la coroutine doit vérifier s'il est actif. Les fonctions de suspension standard vérifient l'annulation (C). L'annulation d'un parent entraîne celle de tous ses enfants (E)."
   },
   {
-    "id": 17,
+    "id": 18,
     "question": "Quelle exception est levée lors d’une annulation ?",
     "options": [
       "A. TimeoutException",
@@ -260,10 +278,11 @@
     ],
     "correctAnswers": [
       2
-    ]
+    ],
+    "explanation": "L'annulation d'une coroutine se fait en jetant une CancellationException. C'est une exception spéciale qui est ignorée par les mécanismes de crash standard mais qui arrête la coroutine."
   },
   {
-    "id": 18,
+    "id": 19,
     "question": "Quelle est la portée correcte pour une coroutine liée à un Fragment ?",
     "options": [
       "A. GlobalScope",
@@ -274,10 +293,11 @@
     ],
     "correctAnswers": [
       2
-    ]
+    ],
+    "explanation": "Dans un Fragment, il faut utiliser viewLifecycleOwner.lifecycleScope pour que les coroutines s'arrêtent lorsque la VUE du fragment est détruite (et pas seulement l'instance du fragment), évitant ainsi des leaks ou des crashs."
   },
   {
-    "id": 19,
+    "id": 20,
     "question": "Concernant RecyclerView",
     "options": [
       "A. Il recycle les ViewHolder",
@@ -290,10 +310,11 @@
       0,
       1,
       3
-    ]
+    ],
+    "explanation": "RecyclerView est conçu pour afficher de grandes listes efficacement en recyclant les vues via le pattern ViewHolder (A, B). Il a absolument besoin d'un Adapter pour faire le lien avec les données (D). Il n'impose pas de layout (LayoutManager flexible) et ne gère pas les clics nativement (il faut les gérer dans le ViewHolder)."
   },
   {
-    "id": 20,
+    "id": 21,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les fonctions de portée (let, run, apply, also, with) en Kotlin ?",
     "options": [
       "A. Les fonctions de portée permettent d’exécuter un bloc de code dans le contexte d’un objet",
@@ -306,7 +327,8 @@
       0,
       1,
       3
-    ]
+    ],
+    "explanation": "Ces fonctions créent un scope temporaire autour d'un objet (A). Elles se distinguent par le contexte (this vs it) et le retour (résultat du bloc vs objet lui-même) (B). Elles servent à rendre le code plus concis et fluide (D)."
   },
   {
     "id": 22,
@@ -321,8 +343,10 @@
     "correctAnswers": [
       0,
       1,
+      2,
       4
-    ]
+    ],
+    "explanation": "Let/Also utilisent l'argument par défaut 'it' (A). Apply/Also retournent l'objet lui-même, idéal pour le chaînage (B). Run/With retournent le résultat de la lambda (C). Apply change le contexte en 'this' et retourne l'objet, parfait pour configurer un objet à sa création (E)."
   },
   {
     "id": 23,
@@ -339,7 +363,8 @@
       1,
       2,
       4
-    ]
+    ],
+    "explanation": "isActive est vrai au démarrage. isCancelled passe à vrai dès l'appel à cancel(), même si le code de nettoyage tourne encore (B). isCompleted est l'état final, atteint après succès, échec ou annulation complète (C, E)."
   },
   {
     "id": 24,
@@ -355,7 +380,8 @@
       0,
       2,
       4
-    ]
+    ],
+    "explanation": "ViewBinding génère une classe Java/Kotlin pour chaque XML à la compilation (A), éliminant findViewById (C) et les casts risqués, garantissant ainsi le type-safety (E) et la null-safety."
   },
   {
     "id": 25,
@@ -370,8 +396,10 @@
     "correctAnswers": [
       0,
       1,
-      2
-    ]
+      2,
+      4
+    ],
+    "explanation": "Le Contexte contient les éléments de config (A). Le Dispatcher gère les threads (B). Le Scope définit la portée/durée de vie (C) et contient un contexte (E)."
   },
   {
     "id": 26,
@@ -388,7 +416,8 @@
       1,
       2,
       4
-    ]
+    ],
+    "explanation": "Navigation Component simplifie la navigation en gérant la pile retour (A) et les transactions de fragments (B) via un graphe XML (C). SafeArgs génère du code pour passer des arguments typés entre destinations (E)."
   },
   {
     "id": 27,
@@ -404,7 +433,8 @@
       0,
       1,
       3
-    ]
+    ],
+    "explanation": "Une fonction suspend est une fonction qui peut faire pause (A) sans bloquer le thread (D), permettant à celui-ci de faire autre chose. Elle doit être appelée dans un contexte de suspension (B)."
   },
   {
     "id": 28,
@@ -418,7 +448,8 @@
     ],
     "correctAnswers": [
       1
-    ]
+    ],
+    "explanation": "Le NavController est l'objet central qui orchestre l'échange de contenu dans le NavHost."
   },
   {
     "id": 29,
@@ -433,7 +464,8 @@
     "correctAnswers": [
       1,
       2
-    ]
+    ],
+    "explanation": "Le NavHostFragment agit comme un conteneur qui affiche et échange les destinations (fragments) (B, C) en fonction de la navigation."
   },
   {
     "id": 30,
@@ -450,7 +482,8 @@
       1,
       2,
       3
-    ]
+    ],
+    "explanation": "'?' marque un type nullable (A). '!!' force le déballage et crash si null (B). '?:' fournit une valeur par défaut si null (C). '?.let {}' permet d'exécuter du code seulement si l'objet n'est pas null (D)."
   },
   {
     "id": 31,
@@ -468,7 +501,8 @@
       2,
       3,
       4
-    ]
+    ],
+    "explanation": "Tous (let, run, with, apply, also) sont des fonctions de portée (scope functions) standard en Kotlin."
   },
   {
     "id": 32,
@@ -482,9 +516,11 @@
     ],
     "correctAnswers": [
       0,
+      1,
       2,
       3
-    ]
+    ],
+    "explanation": "Les deux retournent l'objet (A, B). Mais 'apply' expose l'objet via 'this' (C) (idéal pour initialisation), tandis que 'also' l'expose via 'it' (D) (idéal pour effets de bord comme le logging)."
   },
   {
     "id": 33,
@@ -500,7 +536,8 @@
       0,
       2,
       4
-    ]
+    ],
+    "explanation": "Une sealed class restreint l'héritage à un ensemble connu à la compilation (A), ce qui permet des instructions 'when' exhaustives sans branche 'else' (C). Contrairement aux enums, elles peuvent avoir des instances avec des états différents (E)."
   },
   {
     "id": 34,
@@ -516,7 +553,8 @@
       0,
       2,
       3
-    ]
+    ],
+    "explanation": "'when' est une expression qui peut retourner une valeur (D). Il est particulièrement puissant avec les sealed classes où le compilateur vérifie l'exhaustivité (A, C)."
   },
   {
     "id": 36,
@@ -532,7 +570,8 @@
       0,
       1,
       2
-    ]
+    ],
+    "explanation": "L'inlining copie le corps de la fonction au lieu de l'appeler, ce qui évite la création d'objets pour les lambdas (A) mais augmente la taille du code compiler (B). C'est nécessaire pour supporter les types 'reified' (C)."
   },
   {
     "id": 38,
@@ -548,7 +587,8 @@
       0,
       1,
       4
-    ]
+    ],
+    "explanation": "Les data classes sont faites pour stocker des données. Le compilateur génère automatiquement equals, hashCode, toString et copy (A, B). Elles encouragent l'utilisation de propriétés 'val', favorisant l'immuabilité (E)."
   },
   {
     "id": 40,
@@ -565,7 +605,8 @@
       1,
       3,
       4
-    ]
+    ],
+    "explanation": "GlobalScope ne respecte pas le cycle de vie (A). LifecycleScope est plus sûr (B). L'immuabilité réduit les effets de bord (D). Les fuites de contexte (Memory Leaks) sont critiques en Android (E)."
   },
   {
     "id": 41,
@@ -581,7 +622,8 @@
       1,
       2,
       4
-    ]
+    ],
+    "explanation": "Il est lié à tout LifecycleOwner (Activity, Fragment...) (C). Il annule automatiquement les tâches quand le cycle de vie est détruit (B), prévenant ainsi les fuites de mémoire (E)."
   },
   {
     "id": 42,
@@ -596,7 +638,8 @@
     "correctAnswers": [
       1,
       2
-    ]
+    ],
+    "explanation": "Dans un Fragment, l'instance du Fragment survit plus longtemps que sa Vue. viewLifecycleOwner suit la Vue (B). Utiliser le scope de la vue évite de tenter de mettre à jour une vue détruite (C)."
   },
   {
     "id": 43,
@@ -613,7 +656,8 @@
       1,
       3,
       4
-    ]
+    ],
+    "explanation": "En interne, le compilateur transforme le code en CPS (Continuation Passing Style) (A, B) et génère une machine à états (D). Cela permet de suspendre l'exécution et de libérer le thread (E) sans en créer de nouveaux à chaque fois."
   },
   {
     "id": 44,
@@ -629,7 +673,8 @@
       0,
       1,
       3
-    ]
+    ],
+    "explanation": "Android utilise un système de qualificateurs de ressources (ex: values-fr) (A, D) et charge automatiquement la bonne ressource selon la configuration du device (B)."
   },
   {
     "id": 45,
@@ -646,7 +691,8 @@
       1,
       3,
       4
-    ]
+    ],
+    "explanation": "L'objet Configuration reflète l'état actuel (A). Depuis Android 7 (Nougat), on supporte les listes de langues préférées (B, D). Un changement de config (rotation, langue) redémarre l'activité par défaut (E)."
   },
   {
     "id": 46,
@@ -661,7 +707,8 @@
     "correctAnswers": [
       0,
       3
-    ]
+    ],
+    "explanation": "La HAL (Hardware Abstraction Layer) est cruciale : elle définit une interface standard que les constructeurs de téléphones doivent implémenter pour que le Framework Android puisse parler au matériel (A, D) sans connaître les détails spécifiques des puces."
   },
   {
     "id": 47,
@@ -678,7 +725,8 @@
       1,
       3,
       4
-    ]
+    ],
+    "explanation": "Dalvik était la VM d'origine d'Android (A), utilisant le format .dex (B) et le JIT (Just-In-Time). Elle a été remplacée par ART (Android Runtime) qui utilise l'AOT (Ahead-Of-Time) (D). Chaque app tourne dans son propre processus avec sa propre instance de VM (E)."
   },
   {
     "id": 48,
@@ -694,7 +742,8 @@
       0,
       1,
       3
-    ]
+    ],
+    "explanation": "mdpi (160dpi) est la base (1px = 1dp) (A). Android scale automatiquement les ressources (B). On fournit souvent différentes versions dans des dossiers qualifiés (D). ldpi est 'low' density, donc plus faible que hdpi (high)."
   },
   {
     "id": 49,
@@ -710,7 +759,8 @@
       0,
       1,
       3
-    ]
+    ],
+    "explanation": "Les Services tournent par défaut sur le Main Thread (donc C est faux). Une fois démarré (Started Service), il vit sa vie indépendamment de l'appelant (A) jusqu'à ce qu'il soit stoppé explicitement (B) ou tué par le système (D)."
   },
   {
     "id": 50,
@@ -727,7 +777,8 @@
       1,
       2,
       4
-    ]
+    ],
+    "explanation": "onCreate initialisation unique (A). onBind est spécifique au Binding (liaison) entre composants (C, E) et retourne un IBinder. onDestroy pour le nettoyage final (B)."
   },
   {
     "id": 51,
@@ -743,7 +794,8 @@
       0,
       2,
       4
-    ]
+    ],
+    "explanation": "SavedStateHandle permet de sauvegarder de petites données qui survèvent à l'arrêt du processus par le système (A). Il est intégré aux ViewModels (E) et fonctionne bien avec les arguments de Navigation (C)."
   },
   {
     "id": 52,
@@ -759,7 +811,8 @@
       0,
       1,
       3
-    ]
+    ],
+    "explanation": "L'Activity est le contenant principal (A). Les Fragments sont des composants d'UI modulaires (D) qui doivent vivre dans une Activity (B)."
   },
   {
     "id": 58,
@@ -774,7 +827,8 @@
     "correctAnswers": [
       0,
       2
-    ]
+    ],
+    "explanation": "ConstraintLayout permet de créer des layouts complexes à plat, réduisant l'imbrication des vues (A). Il offre des fonctionnalités avancées comme les chaînes (chains) de vues (C)."
   },
   {
     "id": 59,
@@ -789,7 +843,8 @@
     "correctAnswers": [
       0,
       2
-    ]
+    ],
+    "explanation": "Avec Navigation Component, le NavController gère la pile de retour (A). La fonction popBackStack() permet de revenir programmateriquement en arrière (C)."
   },
   {
     "id": 65,
@@ -804,7 +859,8 @@
     "correctAnswers": [
       0,
       2
-    ]
+    ],
+    "explanation": "coroutineScope est une fonction de suspension qui crée un sous-scope. Elle attend que tous ses enfants soient finis avant de rendre la main (A). Si un enfant échoue, elle annule tous les autres et propage l'exception (C). (Contrairement à supervisorScope)."
   },
   {
     "id": 67,
@@ -819,7 +875,8 @@
     "correctAnswers": [
       0,
       2
-    ]
+    ],
+    "explanation": "CoroutineExceptionHandler (CEH) est un élément de contexte (C) qui attrape les exceptions non gérées par ailleurs (A) dans les coroutines 'launch'. Il ne remplace pas try/catch pour la gestion locale."
   },
   {
     "id": 68,
@@ -834,7 +891,8 @@
     "correctAnswers": [
       0,
       2
-    ]
+    ],
+    "explanation": "La classe Result encapsule soit une valeur de succès, soit une erreur (Throwable) (A). Elle est une value class (immuable et performante) (C). Elle permet un style de programmation plus fonctionnel sans forcément remplacer toutes les exceptions."
   },
   {
     "id": 70,
@@ -850,7 +908,8 @@
       0,
       2,
       4
-    ]
+    ],
+    "explanation": "Activity hérite de Context (A). Garder une référence statique à une Activity (Context) empêche le Garbage Collector de la nettoyer, causant un Memory Leak majeur (C, E)."
   },
   {
     "id": 73,
@@ -865,7 +924,8 @@
     "correctAnswers": [
       0,
       2
-    ]
+    ],
+    "explanation": "Les lambdas sont des fonctions anonymes (A). Elles peuvent capturer des variables de leur portée englobante (C)."
   },
   {
     "id": 74,
@@ -881,11 +941,12 @@
       0,
       2,
       4
-    ]
+    ],
+    "explanation": "En Kotlin, on préfère 'val' (read-only) par défaut (A). Les objets immuables sont intrinsèquement thread-safe (C) et réduisent les bugs liés aux changements d'état inattendus (E)."
   },
   {
     "id": 75,
-    "question": "Considère le code Kotlin suivant :\nval a = 10\nvar b = a\nval c: Number = a\nvar d: Int? = null\nLaquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) ?",
+    "question": "Considère le code Kotlin suivant :\nval a = 10 \nvar b = a \nval c: Number = a \nvar d: Int? = null \nLaquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) ?",
     "options": [
       "A. a est une constante et ne peut jamais être modifiée",
       "B. b peut être réassignée car son type est inféré comme Int",
@@ -897,11 +958,12 @@
       0,
       1,
       3
-    ]
+    ],
+    "explanation": "'val' déclare une variable en lecture seule (A). 'var' est mutable et 'b' est inféré comme Int (B). 'd' est un Int nullable, donc accepte Int ou null (D)."
   },
   {
     "id": 76,
-    "question": "Considère les instructions Kotlin suivantes :\nfor (i in 1..5) print(i)\nfor (i in 0 until 5) print(i)\nfor (i in 10 downTo 0 step 2) print(i)\nQuelle(s) affirmation(s) est/sont correcte(s) ?",
+    "question": "Considère les instructions Kotlin suivantes :\nfor (i in 1..5) print(i) \nfor (i in 0 until 5) print(i) \nfor (i in 10 downTo 0 step 2) print(i) \nQuelle(s) affirmation(s) est/sont correcte(s) ?",
     "options": [
       "A. L’opérateur .. inclut la borne supérieure",
       "B. until exclut la borne supérieure",
@@ -914,7 +976,8 @@
       1,
       2,
       4
-    ]
+    ],
+    "explanation": "'..' crée un range inclusif (A). 'until' exclut la fin (B). 'downTo' inverse l'ordre (C). 'step' définit le pas d'itération (E)."
   },
   {
     "id": 77,
@@ -931,7 +994,8 @@
       1,
       3,
       4
-    ]
+    ],
+    "explanation": "Contrairement à Java, les classes Kotlin sont fermées (final) par défaut (A). Il faut le mot-clé 'open' pour permettre l'héritage (B) ou l'override de méthodes (D)."
   },
   {
     "id": 78,
@@ -947,7 +1011,8 @@
       0,
       1,
       3
-    ]
+    ],
+    "explanation": "ViewBinding génère des références directes et typées aux vues (A), remplaçant findViewById (B). Comme il sait quelles vues sont présentes dans quelles configs (portrait/landscape), il gère mieux la nullabilité (D)."
   },
   {
     "id": 79,
@@ -963,7 +1028,8 @@
       0,
       1,
       3
-    ]
+    ],
+    "explanation": "startActivity lance une activité (A) via un Intent (D). C'est une méthode de la classe Context (B). Pour récupérer un résultat, il faudrait utiliser registerForActivityResult (anciennement startActivityForResult)."
   },
   {
     "id": 80,
@@ -979,6 +1045,7 @@
       0,
       1,
       3
-    ]
+    ],
+    "explanation": "Les Extras sont un Bundle (clé-valeur) (D) attaché à l'Intent. On ajoute avec putExtra (A). Il faut récupérer avec la méthode typée correspondante (getIntExtra, getStringExtra...) (B)."
   }
 ]

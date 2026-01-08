@@ -1,0 +1,77 @@
+[
+    {
+        "id": 1,
+        "term": "Intent explicite",
+        "definition": "Cible précisément un composant d'application (comme une Activity) par son nom de classe. Utilisé principalement pour la navigation interne au sein de l'application."
+    },
+    {
+        "id": 2,
+        "term": "Intent implicite",
+        "definition": "Déclare une action générale à effectuer (ex: ouvrir une page web) sans spécifier le composant exact. Le système Android trouve le meilleur composant capable de gérer cette action."
+    },
+    {
+        "id": 3,
+        "term": "ViewBinding",
+        "definition": "Fonctionnalité qui génère une classe de liaison pour chaque fichier de layout XML. Elle permet d'interagir avec les vues de manière sûre (type-safe et null-safe), remplaçant findViewById."
+    },
+    {
+        "id": 4,
+        "term": "Fragment",
+        "definition": "Portion modulaire et réutilisable de l'interface utilisateur au sein d'une Activity. Il possède son propre cycle de vie et peut gérer ses propres événements d'entrée."
+    },
+    {
+        "id": 5,
+        "term": "Activity",
+        "definition": "Composant fondamental d'Android représentant un écran unique avec une interface utilisateur. Elle sert de point d'entrée pour l'interaction avec l'utilisateur."
+    },
+    {
+        "id": 6,
+        "term": "CoroutineScope",
+        "definition": "Définit la portée et la durée de vie des coroutines. Il permet de lancer de nouvelles coroutines et assure une annulation structurée (ex: si le scope est annulé, toutes ses coroutines le sont)."
+    },
+    {
+        "id": 7,
+        "term": "CoroutineDispatcher",
+        "definition": "Détermine le thread ou le pool de threads sur lequel une coroutine va s'exécuter. Exemples : Dispatchers.Main (UI), Dispatchers.IO (opérations disque/réseau), Dispatchers.Default (CPU)."
+    },
+    {
+        "id": 8,
+        "term": "Suspending function",
+        "definition": "Fonction marquée avec le mot-clé 'suspend'. Elle peut suspendre son exécution sans bloquer le thread courant, permettant d'écrire du code asynchrone de manière séquentielle."
+    },
+    {
+        "id": 9,
+        "term": "Continuation",
+        "definition": "Interface de bas niveau (callback) utilisée par le compilateur Kotlin pour gérer la machine à états des coroutines. Elle représente le reste du calcul à effectuer après un point de suspension."
+    },
+    {
+        "id": 10,
+        "term": "LifecycleScope",
+        "definition": "Scope de coroutine prédéfini lié au cycle de vie d'un objet Lifecycle (comme une Activity ou un Fragment). Les coroutines lancées dans ce scope sont automatiquement annulées lorsque le Lifecycle est détruit."
+    },
+    {
+        "id": 11,
+        "term": "Service Android",
+        "definition": "Composant d'application qui peut effectuer des opérations de longue durée en arrière-plan sans fournir d'interface utilisateur (ex: jouer de la musique, télécharger un fichier)."
+    },
+    {
+        "id": 12,
+        "term": "Lambdas",
+        "definition": "Fonctions anonymes (sans nom) qui peuvent être traitées comme des valeurs : passées en arguments à d'autres fonctions ou retournées. Syntaxe : { paramètres -> corps }."
+    },
+    {
+        "id": 13,
+        "term": "HAL (Hardware Abstraction Layer)",
+        "definition": "Couche logicielle fournissant une interface standard qui permet au framework Android d'interagir avec les composants matériels spécifiques (caméra, bluetooth) sans connaître les détails des pilotes."
+    },
+    {
+        "id": 14,
+        "term": "Fonction d’extension",
+        "definition": "Mécanisme Kotlin permettant d'ajouter de nouvelles fonctions à une classe existante sans avoir à en hériter. Elles sont résolues statiquement."
+    },
+    {
+        "id": 15,
+        "term": "Fonction d’ordre supérieur",
+        "definition": "Fonction qui prend une ou plusieurs fonctions en paramètres, ou qui retourne une fonction. Elles sont très courantes en Kotlin (ex: map, filter, let, apply)."
+    }
+]
