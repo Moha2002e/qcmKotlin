@@ -156,11 +156,13 @@ const prevFlashcard = () => {
         <h2 class="screen-title">Flashcard {{ currentFlashcardIndex + 1 }} / {{ definitions.length }}</h2>
         
         <div class="flashcard-wrapper">
-          <FlashCard 
-            :key="currentFlashcard.id" 
-            :term="currentFlashcard.term" 
-            :definition="currentFlashcard.definition"
-          />
+          <transition name="card-switch" mode="out-in">
+            <FlashCard 
+              :key="currentFlashcard.id" 
+              :term="currentFlashcard.term" 
+              :definition="currentFlashcard.definition"
+            />
+          </transition>
         </div>
 
         <div class="flashcard-controls">
@@ -182,6 +184,21 @@ const prevFlashcard = () => {
 </template>
 
 <style scoped>
+/* Previous styles... */
+.card-switch-enter-active,
+.card-switch-leave-active {
+  transition: all 0.3s ease;
+}
+
+.card-switch-enter-from {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.card-switch-leave-to {
+  opacity: 0;
+  transform: translateX(-30px);
+}
 .app-container {
   width: 100%;
   display: flex;
@@ -393,10 +410,10 @@ const prevFlashcard = () => {
 .flashcard-wrapper {
   width: 100%;
   max-width: 600px;
-  margin-bottom: 3rem;
-  /* Ensure container has decent height for the absolute positioning inside */
+  margin: 0 auto 3rem auto; /* Center horizontally with auto margins */
   display: flex;
   justify-content: center;
+  position: relative; /* Useful context */
 }
 
 .flashcard-controls {
