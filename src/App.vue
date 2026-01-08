@@ -1,19 +1,20 @@
 <script setup>
 import { ref, computed } from 'vue';
-import QuestionCard from './components/QuestionCard.vue';
-import ResultCard from './components/ResultCard.vue';
 import FlashCard from './components/FlashCard.vue';
+import SynthesisView from './components/SynthesisView.vue';
 import questionsData from './assets/questions.json';
 import definitionsData from './assets/definitions.json';
+import synthesisData from './assets/synthesis.json';
 
 const allQuestions = questionsData;
 const definitions = definitionsData;
+const synthesis = synthesisData;
 const SERIES_SIZE = 10;
 
 const currentSeries = ref(0);
 const currentQuestionIndex = ref(0);
 const score = ref(0);
-const gameState = ref('menu'); // 'menu', 'playing', 'result', 'flashcards'
+const gameState = ref('menu'); // 'menu', 'playing', 'result', 'flashcards', 'synthesis'
 
 // Get questions for the selected series
 const currentSeriesQuestions = computed(() => {
@@ -35,7 +36,13 @@ const openFlashcards = () => {
   gameState.value = 'flashcards';
 };
 
+
+
 const userAnswers = ref([]);
+
+const openSynthesis = () => {
+  gameState.value = 'synthesis';
+};
 
 const startQuiz = () => {
   currentQuestionIndex.value = 0;
@@ -107,8 +114,18 @@ const prevFlashcard = () => {
         <div class="main-actions">
           <button class="action-card glass-panel flashcards-btn" @click="openFlashcards">
             <span class="icon">📝</span>
-            <span class="title">Révision Flashcards</span>
-            <span class="desc">15 définitions clés à maîtriser</span>
+            <div class="text-content">
+                <span class="title">Révision Flashcards</span>
+                <span class="desc">15 définitions clés à maîtriser</span>
+            </div>
+          </button>
+
+          <button class="action-card glass-panel synthesis-btn" @click="openSynthesis">
+            <span class="icon">🧠</span>
+            <div class="text-content">
+                <span class="title">Synthèse Technique</span>
+                <span class="desc">Fiches de révision par thème</span>
+            </div>
           </button>
         </div>
 
@@ -174,10 +191,16 @@ const prevFlashcard = () => {
           </button>
         </div>
       </div>
+      <!-- Synthesis Screen -->
+      <SynthesisView 
+        v-else-if="gameState === 'synthesis'" 
+        :synthesis-data="synthesis" 
+        key="synthesis"
+      />
     </transition>
     
     <!-- Back to Menu Button -->
-    <button v-if="gameState === 'result' || gameState === 'flashcards'" class="btn-secondary back-btn fixed-back" @click="backToMenu">
+    <button v-if="gameState === 'result' || gameState === 'flashcards' || gameState === 'synthesis'" class="btn-secondary back-btn fixed-back" @click="backToMenu">
       Retour au Menu
     </button>
   </div>
@@ -296,8 +319,11 @@ const prevFlashcard = () => {
 /* Flashcards & Menu Actions */
 .main-actions {
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
 .action-card {

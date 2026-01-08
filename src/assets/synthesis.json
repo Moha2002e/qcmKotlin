@@ -1,0 +1,82 @@
+[
+    {
+        "category": "Fondamentaux Android",
+        "icon": "📱",
+        "points": [
+            {
+                "concept": "Activity vs Fragment",
+                "details": "L'Activity est le point d'entrée et le contenant. Le Fragment est une portion d'UI réutilisable. Un Fragment vit DANS une Activity. Attention : le Fragment a son propre cycle de vie + celui de sa Vue (onDestroyView)."
+            },
+            {
+                "concept": "Cycle de vie Activity",
+                "details": "onCreate() (init unique) -> onStart() (visible) -> onResume() (interactif). Inverse : onPause() -> onStop() -> onDestroy()."
+            },
+            {
+                "concept": "Intents",
+                "details": "• Explicite : Cible une classe précise (navigation interne).\n• Implicite : Décrit une action (ACTION_VIEW), le système trouve l'app (partage, web)."
+            },
+            {
+                "concept": "Services",
+                "details": "Tâche de fond. Started (startService) vit indéfiniment jusqu'à stopSelf(). Bound (bindService) vit tant qu'un client est connecté."
+            }
+        ]
+    },
+    {
+        "category": "Coroutines & Asynchrone",
+        "icon": "⚡",
+        "points": [
+            {
+                "concept": "Mots-clés",
+                "details": "• suspend : Fonction qui peut faire 'pause' sans bloquer le thread.\n• launch : Tire et oublie (return Job).\n• async : Calcul de résultat (return Deferred, nécessite await())."
+            },
+            {
+                "concept": "Dispatchers",
+                "details": "• Main : UI (interdit de bloquer !).\n• IO : Disque/Réseau.\n• Default : Calculs CPU lourds."
+            },
+            {
+                "concept": "Scopes",
+                "details": "• lifecycleScope : Lié à l'Activity/Fragment.\n• viewModelScope : Lié au ViewModel.\n• GlobalScope : À ÉVITER (fuites mémoires)."
+            }
+        ]
+    },
+    {
+        "category": "Langage Kotlin",
+        "icon": "💎",
+        "points": [
+            {
+                "concept": "Var vs Val",
+                "details": "Toujours préférer 'val' (immuable). 'var' est mutable."
+            },
+            {
+                "concept": "Null Safety",
+                "details": "Type? = nullable. ?. (safe call), !! (force crash si null), ?: (Elvis, valeur par défaut)."
+            },
+            {
+                "concept": "Scope Functions",
+                "details": "• let (it) -> résultat lambda\n• also (it) -> objet lui-même\n• apply (this) -> objet lui-même (config)\n• run (this) -> résultat lambda"
+            },
+            {
+                "concept": "Lazy vs Lateinit",
+                "details": "• lazy : Pour 'val', calculé au 1er accès.\n• lateinit : Pour 'var' non-nullable, initialisé plus tard (promesse)."
+            }
+        ]
+    },
+    {
+        "category": "Architecture & UI",
+        "icon": "🏗️",
+        "points": [
+            {
+                "concept": "ViewBinding",
+                "details": "Remplace findViewById. Génère une classe de liaison sûre (null-safe, type-safe) pour chaque XML."
+            },
+            {
+                "concept": "Navigation Component",
+                "details": "Activity unique (Single Activity). NavController gère le remplacement des Fragments et la pile retour (BackStack)."
+            },
+            {
+                "concept": "RecyclerView",
+                "details": "Obligatoire pour les listes. Nécessite un Adapter (données -> vues) et un ViewHolder (recyclage des vues pour perf)."
+            }
+        ]
+    }
+]
