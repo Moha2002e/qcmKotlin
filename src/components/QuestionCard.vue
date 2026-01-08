@@ -39,7 +39,7 @@ const toggleOption = (index) => {
 };
 
 const isOptionCorrect = (index) => {
-  return props.question.correctAnswers.includes(index);
+  return props.question.correctAnswers?.includes(index) || false;
 };
 
 const isOptionSelected = (index) => {
@@ -72,6 +72,7 @@ const next = () => {
 };
 
 const isCorrectGlobal = computed(() => {
+    if (!props.question?.correctAnswers) return false;
     const correct = props.question.correctAnswers.slice().sort((a, b) => a - b);
     const user = selectedIndices.value.slice().sort((a, b) => a - b);
     return JSON.stringify(correct) === JSON.stringify(user);

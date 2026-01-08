@@ -62,7 +62,7 @@ const props = defineProps({
 
 .categories-masonry {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   width: 100%;
 }
@@ -73,40 +73,37 @@ const props = defineProps({
   background: rgba(30, 41, 59, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
-  transition: transform 0.3s ease;
-}
-
-.category-card:hover {
-  transform: translateY(-5px);
-  background: rgba(30, 41, 59, 0.8);
-  border-color: rgba(99, 102, 241, 0.3);
+  display: flex;
+  flex-direction: column;
 }
 
 .cat-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem; /* Increased from 1.5rem to 2rem */
   margin-bottom: 2rem;
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cat-icon {
-  font-size: 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  width: 50px;
-  height: 50px;
+  font-size: 2.5rem;
+  background: rgba(99, 102, 241, 0.2);
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .cat-title {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: #fff;
-  font-weight: 700;
+  font-weight: 800;
   margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .points-list {
@@ -116,36 +113,47 @@ const props = defineProps({
 }
 
 .point-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: background 0.2s;
+}
+
+.point-item:hover {
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .point-header {
   display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
 }
 
 .bullet {
   color: #6366f1;
-  font-size: 1.2rem;
-  line-height: 1;
+  font-size: 1.5rem;
+  line-height: 0;
+  display: none; /* Hide bullet in card mode */
 }
 
 .point-concept {
   color: #a5b4fc;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
 }
 
 .point-details {
   color: #cbd5e1;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.7;
   margin: 0;
-  padding-left: 1.25rem;
-  white-space: pre-line; /* Allows newlines in JSON */
+  padding-left: 0;
+  white-space: pre-line;
 }
 
 @media (max-width: 640px) {

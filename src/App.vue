@@ -1,5 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue';
+import QuestionCard from './components/QuestionCard.vue';
+import ResultCard from './components/ResultCard.vue';
 import FlashCard from './components/FlashCard.vue';
 import SynthesisView from './components/SynthesisView.vue';
 import questionsData from './assets/questions.json';
@@ -148,7 +150,7 @@ const prevFlashcard = () => {
 
       <!-- Playing Screen -->
       <QuestionCard 
-        v-else-if="gameState === 'playing'"
+        v-else-if="gameState === 'playing' && currentQuestion"
         :question="currentQuestion"
         :question-number="currentQuestionIndex + 1"
         :total-questions="currentSeriesQuestions.length"
