@@ -955,10 +955,7 @@
       "E. Le typage explicite empêche toute inférence du compilateur"
     ],
     "correctAnswers": [
-      1,
-      2,
-      3,
-      4
+1,3
     ],
     "explanation": "'val' déclare une variable en lecture seule (A). 'var' est mutable et 'b' est inféré comme Int (B). 'd' est un Int nullable, donc accepte Int ou null (D)."
   },
