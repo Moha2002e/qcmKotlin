@@ -3,11 +3,11 @@
     "id": 1,
     "question": "Concernant Intent, lesquelles sont vraies ?",
     "options": [
-      "A. Un Intent explicite cible une classe précise",
-      "B. Un Intent implicite nécessite toujours un ComponentName",
-      "C. Les Intent implicites utilisent les IntentFilter",
-      "D. Un Intent ne peut pas transporter d’objets complexes",
-      "E. Un Intent peut être utilisé pour démarrer un service"
+      "Un Intent explicite cible une classe précise",
+      "Un Intent implicite nécessite toujours un ComponentName",
+      "Les Intent implicites utilisent les IntentFilter",
+      "Un Intent ne peut pas transporter d’objets complexes",
+      "Un Intent peut être utilisé pour démarrer un service"
     ],
     "correctAnswers": [
       0,
@@ -20,11 +20,11 @@
     "id": 2,
     "question": "Quelle(s) affirmation(s) sur PendingIntent sont correctes ?",
     "options": [
-      "A. Il permet à une application externe d’exécuter une action dans votre contexte",
-      "B. Il est toujours lié à une Activity",
-      "C. Il est requis pour les notifications",
-      "D. Il remplace un Intent",
-      "E. Il peut encapsuler un Broadcast"
+      "Il permet à une application externe d’exécuter une action dans votre contexte",
+      "Il est toujours lié à une Activity",
+      "Il est requis pour les notifications",
+      "Il remplace un Intent",
+      "Il peut encapsuler un Broadcast"
     ],
     "correctAnswers": [
       0,
@@ -37,11 +37,11 @@
     "id": 4,
     "question": "Concernant le cycle de vie d’une Activity",
     "options": [
-      "A. onCreate() est appelé une seule fois par instance",
-      "B. onPause() garantit que l’activité est détruite",
-      "C. onStop() signifie que l’UI n’est plus visible",
-      "D. onRestart() est appelé après onCreate()",
-      "E. onDestroy() peut ne jamais être appelé"
+      "onCreate() est appelé une seule fois par instance",
+      "onPause() garantit que l’activité est détruite",
+      "onStop() signifie que l’UI n’est plus visible",
+      "onRestart() est appelé après onCreate()",
+      "onDestroy() peut ne jamais être appelé"
     ],
     "correctAnswers": [
       0,
@@ -54,11 +54,11 @@
     "id": 5,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les constantes Intent.ACTION_* en Android ?",
     "options": [
-      "A. Elles représentent des actions standard reconnues par le système Android",
-      "B. Elles sont principalement utilisées avec des Intents implicites",
-      "C. Intent.ACTION_* permet de cibler directement une Activity précise",
-      "D. Elles peuvent être associées à des IntentFilter dans le manifeste",
-      "E. Elles remplacent l’utilisation des ComponentName"
+      "Elles représentent des actions standard reconnues par le système Android",
+      "Elles sont principalement utilisées avec des Intents implicites",
+      "Intent.ACTION_* permet de cibler directement une Activity précise",
+      "Elles peuvent être associées à des IntentFilter dans le manifeste",
+      "Elles remplacent l’utilisation des ComponentName"
     ],
     "correctAnswers": [
       0,
@@ -71,11 +71,11 @@
     "id": 6,
     "question": "À propos des Fragment",
     "options": [
-      "A. Un fragment doit être attaché à une activité",
-      "B. Un fragment possède son propre Context",
-      "C. Un fragment a un cycle de vie distinct",
-      "D. Les fragments sont dépréciés",
-      "E. Un fragment peut survivre à une rotation"
+      "Un fragment doit être attaché à une activité",
+      "Un fragment possède son propre Context",
+      "Un fragment a un cycle de vie distinct",
+      "Les fragments sont dépréciés",
+      "Un fragment peut survivre à une rotation"
     ],
     "correctAnswers": [
       0,
@@ -88,11 +88,11 @@
     "id": 7,
     "question": "Quelle méthode correspond à l’initialisation de la vue d’un fragment ?",
     "options": [
-      "A. onAttach()",
-      "B. onCreateView()",
-      "C. onCreate()",
-      "D. onViewCreated()",
-      "E. onStart()"
+      "onAttach()",
+      "onCreateView()",
+      "onCreate()",
+      "onViewCreated()",
+      "onStart()"
     ],
     "correctAnswers": [
       1
@@ -103,11 +103,11 @@
     "id": 8,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les expressions lambda en Kotlin ?",
     "options": [
-      "A. Une lambda est une fonction anonyme",
-      "B. Une lambda peut être passée comme paramètre à une fonction",
-      "C. Une lambda ne peut pas capturer de variables externes",
-      "D. Le type d’une lambda peut être inféré par le compilateur",
-      "E. Une lambda ne peut pas retourner de valeur"
+      "Une lambda est une fonction anonyme",
+      "Une lambda peut être passée comme paramètre à une fonction",
+      "Une lambda ne peut pas capturer de variables externes",
+      "Le type d’une lambda peut être inféré par le compilateur",
+      "Une lambda ne peut pas retourner de valeur"
     ],
     "correctAnswers": [
       0,
@@ -120,11 +120,11 @@
     "id": 9,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les fonctions d’ordre supérieur en Kotlin ?",
     "options": [
-      "A. Une fonction d’ordre supérieur peut prendre une ou plusieurs fonctions en paramètre",
-      "B. Une fonction d’ordre supérieur peut retourner une fonction",
-      "C. Une fonction d’ordre supérieur doit obligatoirement être inline",
-      "D. Les fonctions d’ordre supérieur sont largement utilisées avec les lambdas",
-      "E. Une fonction d’ordre supérieur ne peut pas être stockée dans une variable"
+      "Une fonction d’ordre supérieur peut prendre une ou plusieurs fonctions en paramètre",
+      "Une fonction d’ordre supérieur peut retourner une fonction",
+      "Une fonction d’ordre supérieur doit obligatoirement être inline",
+      "Les fonctions d’ordre supérieur sont largement utilisées avec les lambdas",
+      "Une fonction d’ordre supérieur ne peut pas être stockée dans une variable"
     ],
     "correctAnswers": [
       0,
@@ -137,11 +137,11 @@
     "id": 10,
     "question": "À propos de lateinit",
     "options": [
-      "A. Uniquement pour les types non-null",
-      "B. Ne fonctionne pas avec les types primitifs",
-      "C. Peut être utilisé avec val",
-      "D. Provoque une exception si non initialisé",
-      "E. Compatible avec lazy"
+      "Uniquement pour les types non-null",
+      "Ne fonctionne pas avec les types primitifs",
+      "Peut être utilisé avec val",
+      "Provoque une exception si non initialisé",
+      "Compatible avec lazy"
     ],
     "correctAnswers": [
       0,
@@ -154,11 +154,11 @@
     "id": 11,
     "question": "Différence entre lazy et lateinit",
     "options": [
-      "A. lazy est thread-safe par défaut",
-      "B. lazy est uniquement pour val",
-      "C. lateinit ne supporte pas les primitives",
-      "D. lateinit est évalué à l’accès",
-      "E. lazy peut être réassigné"
+      "lazy est thread-safe par défaut",
+      "lazy est uniquement pour val",
+      "lateinit ne supporte pas les primitives",
+      "lateinit est évalué à l’accès",
+      "lazy peut être réassigné"
     ],
     "correctAnswers": [
       0,
@@ -171,11 +171,11 @@
     "id": 12,
     "question": "À propos des coroutines",
     "options": [
-      "A. Une coroutine n’est pas un thread",
-      "B. Une coroutine peut être suspendue",
-      "C. Une coroutine bloque toujours le thread",
-      "D. suspend n’indique pas l’asynchronisme",
-      "E. Une coroutine survit à la mort du process"
+      "Une coroutine n’est pas un thread",
+      "Une coroutine peut être suspendue",
+      "Une coroutine bloque toujours le thread",
+      "suspend n’indique pas l’asynchronisme",
+      "Une coroutine survit à la mort du process"
     ],
     "correctAnswers": [
       0,
@@ -188,11 +188,11 @@
     "id": 13,
     "question": "Que fait exactement suspend ?",
     "options": [
-      "A. Rend la fonction asynchrone",
-      "B. Crée un thread",
-      "C. Permet la suspension sans bloquer",
-      "D. Peut appeler d’autres fonctions suspendues",
-      "E. Garantit un contexte IO"
+      "Rend la fonction asynchrone",
+      "Crée un thread",
+      "Permet la suspension sans bloquer",
+      "Peut appeler d’autres fonctions suspendues",
+      "Garantit un contexte IO"
     ],
     "correctAnswers": [
       2,
@@ -204,11 +204,11 @@
     "id": 14,
     "question": "Concernant runBlocking",
     "options": [
-      "A. Bloque le thread courant",
-      "B. À utiliser en production Android",
-      "C. Utile pour les tests",
-      "D. Remplace launch",
-      "E. Fonctionne uniquement sur Main thread"
+      "Bloque le thread courant",
+      "À utiliser en production Android",
+      "Utile pour les tests",
+      "Remplace launch",
+      "Fonctionne uniquement sur Main thread"
     ],
     "correctAnswers": [
       0,
@@ -220,11 +220,11 @@
     "id": 15,
     "question": "Quelle est la différence entre launch et async ?",
     "options": [
-      "A. launch retourne une valeur",
-      "B. async retourne un Deferred",
-      "C. async nécessite await()",
-      "D. launch bloque",
-      "E. async ne peut pas être annulé"
+      "launch retourne une valeur",
+      "async retourne un Deferred",
+      "async nécessite await()",
+      "launch bloque",
+      "async ne peut pas être annulé"
     ],
     "correctAnswers": [
       1,
@@ -236,11 +236,11 @@
     "id": 16,
     "question": "Concernant Dispatcher.Main",
     "options": [
-      "A. Exécute sur le thread UI",
-      "B. Peut être utilisé pour IO intensif",
-      "C. Requiert Dispatchers.Main.immediate pour éviter un post",
-      "D. Est toujours disponible",
-      "E. Nécessite Android"
+      "Exécute sur le thread UI",
+      "Peut être utilisé pour IO intensif",
+      "Requiert Dispatchers.Main.immediate pour éviter un post",
+      "Est toujours disponible",
+      "Nécessite Android"
     ],
     "correctAnswers": [
       0,
@@ -253,11 +253,11 @@
     "id": 17,
     "question": "À propos de l’annulation (cancel)",
     "options": [
-      "A. Elle est coopérative",
-      "B. Elle stoppe immédiatement la coroutine",
-      "C. Les suspending functions la respectent",
-      "D. Elle tue le thread",
-      "E. Elle propage aux enfants"
+      "Elle est coopérative",
+      "Elle stoppe immédiatement la coroutine",
+      "Les suspending functions la respectent",
+      "Elle tue le thread",
+      "Elle propage aux enfants"
     ],
     "correctAnswers": [
       0,
@@ -270,11 +270,11 @@
     "id": 18,
     "question": "Quelle exception est levée lors d’une annulation ?",
     "options": [
-      "A. TimeoutException",
-      "B. IllegalStateException",
-      "C. CancellationException",
-      "D. IOException",
-      "E. RuntimeException"
+      "TimeoutException",
+      "IllegalStateException",
+      "CancellationException",
+      "IOException",
+      "RuntimeException"
     ],
     "correctAnswers": [
       2
@@ -285,11 +285,11 @@
     "id": 19,
     "question": "Quelle est la portée correcte pour une coroutine liée à un Fragment ?",
     "options": [
-      "A. GlobalScope",
-      "B. MainScope",
-      "C. viewLifecycleOwner.lifecycleScope",
-      "D. activityScope",
-      "E. applicationScope"
+      "GlobalScope",
+      "MainScope",
+      "viewLifecycleOwner.lifecycleScope",
+      "activityScope",
+      "applicationScope"
     ],
     "correctAnswers": [
       2
@@ -300,11 +300,11 @@
     "id": 20,
     "question": "Concernant RecyclerView",
     "options": [
-      "A. Il recycle les ViewHolder",
-      "B. Il est plus performant que ListView",
-      "C. Il impose un layout vertical",
-      "D. Il nécessite un Adapter",
-      "E. Il gère automatiquement les clics"
+      "Il recycle les ViewHolder",
+      "Il est plus performant que ListView",
+      "Il impose un layout vertical",
+      "Il nécessite un Adapter",
+      "Il gère automatiquement les clics"
     ],
     "correctAnswers": [
       0,
@@ -317,11 +317,11 @@
     "id": 21,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les fonctions de portée (let, run, apply, also, with) en Kotlin ?",
     "options": [
-      "A. Les fonctions de portée permettent d’exécuter un bloc de code dans le contexte d’un objet",
-      "B. Elles diffèrent par la valeur de retour et la manière d’accéder au receiver (this ou it)",
-      "C. Toutes les fonctions de portée retournent toujours l’objet receiver",
-      "D. Elles améliorent la lisibilité et réduisent le code répétitif",
-      "E. Les fonctions de portée remplacent les classes et les fonctions classiques"
+      "Les fonctions de portée permettent d’exécuter un bloc de code dans le contexte d’un objet",
+      "Elles diffèrent par la valeur de retour et la manière d’accéder au receiver (this ou it)",
+      "Toutes les fonctions de portée retournent toujours l’objet receiver",
+      "Elles améliorent la lisibilité et réduisent le code répétitif",
+      "Les fonctions de portée remplacent les classes et les fonctions classiques"
     ],
     "correctAnswers": [
       0,
@@ -334,11 +334,11 @@
     "id": 22,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les fonctions de portée Kotlin (let, run, with, apply, also) ?",
     "options": [
-      "A. let et also utilisent it comme contexte d’accès à l’objet",
-      "B. apply et also retournent l’objet receiver",
-      "C. run et with retournent le résultat du dernier bloc exécuté",
-      "D. with peut être appelé sur un objet nullable sans vérification préalable",
-      "E. apply est particulièrement adapté à la configuration ou au pattern builder"
+      "let et also utilisent it comme contexte d’accès à l’objet",
+      "apply et also retournent l’objet receiver",
+      "run et with retournent le résultat du dernier bloc exécuté",
+      "with peut être appelé sur un objet nullable sans vérification préalable",
+      "apply est particulièrement adapté à la configuration ou au pattern builder"
     ],
     "correctAnswers": [
       0,
@@ -352,11 +352,11 @@
     "id": 23,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les propriétés isActive, isCancelled et isCompleted d’une coroutine (Job) ?",
     "options": [
-      "A. isActive est vrai tant que la coroutine s’exécute ou peut encore s’exécuter",
-      "B. isCancelled devient vrai lorsqu’une annulation est demandée, même si la coroutine n’est pas encore terminée",
-      "C. isCompleted devient vrai uniquement lorsque la coroutine a terminé son exécution (succès ou échec)",
-      "D. isCancelled et isCompleted sont toujours vrais simultanément",
-      "E. Une coroutine annulée est considérée comme complétée (isCompleted == true) une fois son exécution terminée"
+      "isActive est vrai tant que la coroutine s’exécute ou peut encore s’exécuter",
+      "isCancelled devient vrai lorsqu’une annulation est demandée, même si la coroutine n’est pas encore terminée",
+      "isCompleted devient vrai uniquement lorsque la coroutine a terminé son exécution (succès ou échec)",
+      "isCancelled et isCompleted sont toujours vrais simultanément",
+      "Une coroutine annulée est considérée comme complétée (isCompleted == true) une fois son exécution terminée"
     ],
     "correctAnswers": [
       0,
@@ -370,11 +370,11 @@
     "id": 24,
     "question": "Concernant ViewBinding",
     "options": [
-      "A. Généré à la compilation",
-      "B. Utilise la réflexion",
-      "C. Supprime findViewById",
-      "D. Est plus lent que DataBinding",
-      "E. Respecte le type-safety"
+      "Généré à la compilation",
+      "Utilise la réflexion",
+      "Supprime findViewById",
+      "Est plus lent que DataBinding",
+      "Respecte le type-safety"
     ],
     "correctAnswers": [
       0,
@@ -387,11 +387,11 @@
     "id": 25,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant CoroutineContext, CoroutineDispatcher et CoroutineScope ?",
     "options": [
-      "A. CoroutineContext est une collection d’éléments décrivant l’environnement d’exécution d’une coroutine",
-      "B. CoroutineDispatcher détermine sur quel thread ou pool de threads la coroutine s’exécute",
-      "C. CoroutineScope définit la durée de vie des coroutines qu’il lance",
-      "D. CoroutineDispatcher est obligatoire pour lancer une coroutine",
-      "E. Un CoroutineScope combine généralement un CoroutineContext et un Job"
+      "CoroutineContext est une collection d’éléments décrivant l’environnement d’exécution d’une coroutine",
+      "CoroutineDispatcher détermine sur quel thread ou pool de threads la coroutine s’exécute",
+      "CoroutineScope définit la durée de vie des coroutines qu’il lance",
+      "CoroutineDispatcher est obligatoire pour lancer une coroutine",
+      "Un CoroutineScope combine généralement un CoroutineContext et un Job"
     ],
     "correctAnswers": [
       0,
@@ -405,11 +405,11 @@
     "id": 26,
     "question": "Concernant Navigation Component",
     "options": [
-      "A. Gère le back stack",
-      "B. Remplace FragmentManager",
-      "C. Utilise un NavGraph",
-      "D. Fonctionne sans fragments",
-      "E. Facilite SafeArgs"
+      "Gère le back stack",
+      "Remplace FragmentManager",
+      "Utilise un NavGraph",
+      "Fonctionne sans fragments",
+      "Facilite SafeArgs"
     ],
     "correctAnswers": [
       0,
@@ -423,11 +423,11 @@
     "id": 27,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant une suspending function en Kotlin ?",
     "options": [
-      "A. Une suspending function peut suspendre son exécution sans bloquer le thread",
-      "B. Une suspending function ne peut être appelée que depuis une coroutine ou une autre suspending function",
-      "C. Une suspending function crée automatiquement un nouveau thread",
-      "D. Lorsqu’elle est suspendue, le thread peut exécuter d’autres tâches",
-      "E. Une suspending function garantit une exécution parallèle"
+      "Une suspending function peut suspendre son exécution sans bloquer le thread",
+      "Une suspending function ne peut être appelée que depuis une coroutine ou une autre suspending function",
+      "Une suspending function crée automatiquement un nouveau thread",
+      "Lorsqu’elle est suspendue, le thread peut exécuter d’autres tâches",
+      "Une suspending function garantit une exécution parallèle"
     ],
     "correctAnswers": [
       0,
@@ -440,11 +440,11 @@
     "id": 28,
     "question": "Quelle classe gère la navigation ?",
     "options": [
-      "A. FragmentManager",
-      "B. NavController",
-      "C. NavHost",
-      "D. Router",
-      "E. ActivityManager"
+      "FragmentManager",
+      "NavController",
+      "NavHost",
+      "Router",
+      "ActivityManager"
     ],
     "correctAnswers": [
       1
@@ -455,11 +455,11 @@
     "id": 29,
     "question": "Quelle est la responsabilité de NavHostFragment ?",
     "options": [
-      "A. Gérer les intents",
-      "B. Afficher les destinations",
-      "C. Créer les fragments",
-      "D. Sauvegarder l’état",
-      "E. Gérer ViewBinding"
+      "Gérer les intents",
+      "Afficher les destinations",
+      "Créer les fragments",
+      "Sauvegarder l’état",
+      "Gérer ViewBinding"
     ],
     "correctAnswers": [
       1,
@@ -471,11 +471,11 @@
     "id": 30,
     "question": "Concernant Kotlin null-safety",
     "options": [
-      "A. ? rend nullable",
-      "B. !! peut lever une exception",
-      "C. ?: est un opérateur Elvis",
-      "D. let évite les NPE",
-      "E. lateinit accepte null"
+      "? rend nullable",
+      "!! peut lever une exception",
+      "?: est un opérateur Elvis",
+      "let évite les NPE",
+      "lateinit accepte null"
     ],
     "correctAnswers": [
       0,
@@ -489,11 +489,11 @@
     "id": 31,
     "question": "Quel(s) scope(s) Kotlin existent ?",
     "options": [
-      "A. let",
-      "B. apply",
-      "C. run",
-      "D. with",
-      "E. also"
+      "let",
+      "apply",
+      "run",
+      "with",
+      "also"
     ],
     "correctAnswers": [
       0,
@@ -508,11 +508,11 @@
     "id": 32,
     "question": "Différence entre apply et also",
     "options": [
-      "A. apply retourne le receiver",
-      "B. also retourne le receiver",
-      "C. apply utilise this",
-      "D. also utilise it",
-      "E. also modifie le receiver"
+      "apply retourne le receiver",
+      "also retourne le receiver",
+      "apply utilise this",
+      "also utilise it",
+      "also modifie le receiver"
     ],
     "correctAnswers": [
       0,
@@ -526,11 +526,11 @@
     "id": 33,
     "question": "Concernant sealed class",
     "options": [
-      "A. Restreint l’héritage",
-      "B. Peut être étendue partout",
-      "C. Utile pour when exhaustif",
-      "D. Remplacée par enum",
-      "E. Permet des états complexes"
+      "Restreint l’héritage",
+      "Peut être étendue partout",
+      "Utile pour when exhaustif",
+      "Remplacée par enum",
+      "Permet des états complexes"
     ],
     "correctAnswers": [
       0,
@@ -543,11 +543,11 @@
     "id": 34,
     "question": "À propos de when",
     "options": [
-      "A. Peut être exhaustif",
-      "B. Remplace if uniquement",
-      "C. Fonctionne avec sealed class",
-      "D. Est une expression",
-      "E. Ne retourne rien"
+      "Peut être exhaustif",
+      "Remplace if uniquement",
+      "Fonctionne avec sealed class",
+      "Est une expression",
+      "Ne retourne rien"
     ],
     "correctAnswers": [
       0,
@@ -560,11 +560,11 @@
     "id": 36,
     "question": "Quelle affirmation est vraie sur inline ?",
     "options": [
-      "A. Réduit l’overhead lambda",
-      "B. Augmente la taille du bytecode",
-      "C. Utilisable avec reified",
-      "D. Obligatoire",
-      "E. Désactivée sur Android"
+      "Réduit l’overhead lambda",
+      "Augmente la taille du bytecode",
+      "Utilisable avec reified",
+      "Obligatoire",
+      "Désactivée sur Android"
     ],
     "correctAnswers": [
       0,
@@ -577,11 +577,11 @@
     "id": 38,
     "question": "Concernant les data class",
     "options": [
-      "A. Génèrent equals/hashCode",
-      "B. Génèrent copy()",
-      "C. Peuvent être abstract",
-      "D. Peuvent être sealed",
-      "E. Améliorent l’immuabilité"
+      "Génèrent equals/hashCode",
+      "Génèrent copy()",
+      "Peuvent être abstract",
+      "Peuvent être sealed",
+      "Améliorent l’immuabilité"
     ],
     "correctAnswers": [
       0,
@@ -594,11 +594,11 @@
     "id": 40,
     "question": "Quelle(s) bonne(s) pratique(s) Android/Kotlin ?",
     "options": [
-      "A. Éviter GlobalScope",
-      "B. Utiliser lifecycleScope",
-      "C. Bloquer le thread Main",
-      "D. Préférer immutabilité",
-      "E. Limiter les context leaks"
+      "Éviter GlobalScope",
+      "Utiliser lifecycleScope",
+      "Bloquer le thread Main",
+      "Préférer immutabilité",
+      "Limiter les context leaks"
     ],
     "correctAnswers": [
       0,
@@ -612,11 +612,11 @@
     "id": 41,
     "question": "Concernant lifecycleScope",
     "options": [
-      "A. Disponible uniquement dans les fragments",
-      "B. Annule automatiquement les coroutines à la destruction",
-      "C. Basé sur le LifecycleOwner",
-      "D. Exécute toujours sur Dispatchers.IO",
-      "E. Évite les memory leaks"
+      "Disponible uniquement dans les fragments",
+      "Annule automatiquement les coroutines à la destruction",
+      "Basé sur le LifecycleOwner",
+      "Exécute toujours sur Dispatchers.IO",
+      "Évite les memory leaks"
     ],
     "correctAnswers": [
       1,
@@ -629,11 +629,11 @@
     "id": 42,
     "question": "Différence entre lifecycleScope et viewLifecycleOwner.lifecycleScope",
     "options": [
-      "A. Ils sont identiques",
-      "B. Le second est lié au cycle de vie de la vue",
-      "C. Évite les crashes après onDestroyView()",
-      "D. Le premier est déprécié",
-      "E. Le second fonctionne dans une Activity"
+      "Ils sont identiques",
+      "Le second est lié au cycle de vie de la vue",
+      "Évite les crashes après onDestroyView()",
+      "Le premier est déprécié",
+      "Le second fonctionne dans une Activity"
     ],
     "correctAnswers": [
       1,
@@ -645,11 +645,11 @@
     "id": 43,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les suspending functions et le mécanisme de Continuation<T> en Kotlin ?",
     "options": [
-      "A. Une suspending function est compilée avec un paramètre implicite de type Continuation<T>",
-      "B. Continuation<T> représente la suite de l’exécution après un point de suspension",
-      "C. Une suspending function crée systématiquement un nouveau thread",
-      "D. Le compilateur transforme une suspending function en machine à états",
-      "E. La suspension permet de libérer le thread sans consommer de ressources importantes"
+      "Une suspending function est compilée avec un paramètre implicite de type Continuation<T>",
+      "Continuation<T> représente la suite de l’exécution après un point de suspension",
+      "Une suspending function crée systématiquement un nouveau thread",
+      "Le compilateur transforme une suspending function en machine à états",
+      "La suspension permet de libérer le thread sans consommer de ressources importantes"
     ],
     "correctAnswers": [
       0,
@@ -663,11 +663,11 @@
     "id": 44,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant l’internationalisation (i18n) et l’utilisation des fichiers de ressources dans Android ?",
     "options": [
-      "A. Les chaînes traduites sont définies dans des fichiers strings.xml spécifiques par langue",
-      "B. Android sélectionne automatiquement les ressources en fonction de la locale du système",
-      "C. Les fichiers de ressources internationalisées doivent être chargés manuellement dans le code",
-      "D. Il est possible de définir des variantes régionales (ex. fr-rBE, en-rUS)",
-      "E. L’internationalisation empêche toute modification dynamique de la langue de l’application"
+      "Les chaînes traduites sont définies dans des fichiers strings.xml spécifiques par langue",
+      "Android sélectionne automatiquement les ressources en fonction de la locale du système",
+      "Les fichiers de ressources internationalisées doivent être chargés manuellement dans le code",
+      "Il est possible de définir des variantes régionales (ex. fr-rBE, en-rUS)",
+      "L’internationalisation empêche toute modification dynamique de la langue de l’application"
     ],
     "correctAnswers": [
       0,
@@ -680,11 +680,11 @@
     "id": 45,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant Configuration, l’accès via getConfiguration() et l’utilisation de Locale en Android ?",
     "options": [
-      "A. getConfiguration() permet d’accéder à la configuration courante de l’appareil (langue, orientation, densité, etc.)",
-      "B. La langue courante peut être obtenue à partir de Configuration.locale ou Configuration.locales selon la version d’Android",
-      "C. Modifier un objet Locale met automatiquement à jour la langue de l’application",
-      "D. À partir d’Android 7.0, plusieurs locales peuvent être définies via LocaleList",
-      "E. Un changement de Configuration peut déclencher la recréation d’une Activity"
+      "getConfiguration() permet d’accéder à la configuration courante de l’appareil (langue, orientation, densité, etc.)",
+      "La langue courante peut être obtenue à partir de Configuration.locale ou Configuration.locales selon la version d’Android",
+      "Modifier un objet Locale met automatiquement à jour la langue de l’application",
+      "À partir d’Android 7.0, plusieurs locales peuvent être définies via LocaleList",
+      "Un changement de Configuration peut déclencher la recréation d’une Activity"
     ],
     "correctAnswers": [
       0,
@@ -698,11 +698,11 @@
     "id": 46,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant l’architecture Android et les rôles respectifs des Libraries, de la HAL (Hardware Abstraction Layer) et du hardware ?",
     "options": [
-      "A. La HAL fournit une interface standardisée entre le framework Android et le matériel",
-      "B. Les Libraries Android offrent des fonctionnalités de haut niveau accessibles aux applications",
-      "C. Le hardware est directement manipulé par les applications Android",
-      "D. La HAL permet d’isoler Android des spécificités matérielles des constructeurs",
-      "E. Les Libraries remplacent la HAL pour l’accès aux composants matériels"
+      "La HAL fournit une interface standardisée entre le framework Android et le matériel",
+      "Les Libraries Android offrent des fonctionnalités de haut niveau accessibles aux applications",
+      "Le hardware est directement manipulé par les applications Android",
+      "La HAL permet d’isoler Android des spécificités matérielles des constructeurs",
+      "Les Libraries remplacent la HAL pour l’accès aux composants matériels"
     ],
     "correctAnswers": [
       0,
@@ -714,11 +714,11 @@
     "id": 47,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant la machine virtuelle Dalvik dans l’écosystème Android ?",
     "options": [
-      "A. Dalvik est une machine virtuelle conçue spécifiquement pour les appareils mobiles Android",
-      "B. Dalvik exécute des fichiers au format .dex (Dalvik Executable)",
-      "C. Dalvik utilise exclusivement la compilation AOT (Ahead-Of-Time)",
-      "D. Dalvik a été remplacée progressivement par ART à partir d’Android 5.0",
-      "E. Dalvik fonctionne avec un modèle “une VM par application” afin d’isoler les apps"
+      "Dalvik est une machine virtuelle conçue spécifiquement pour les appareils mobiles Android",
+      "Dalvik exécute des fichiers au format .dex (Dalvik Executable)",
+      "Dalvik utilise exclusivement la compilation AOT (Ahead-Of-Time)",
+      "Dalvik a été remplacée progressivement par ART à partir d’Android 5.0",
+      "Dalvik fonctionne avec un modèle “une VM par application” afin d’isoler les apps"
     ],
     "correctAnswers": [
       0,
@@ -732,11 +732,11 @@
     "id": 48,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les densités d’écran (ldpi, mdpi, hdpi) et la gestion des ressources Android ?",
     "options": [
-      "A. mdpi est considérée comme la densité de référence (baseline)",
-      "B. Android sélectionne automatiquement les ressources graphiques adaptées à la densité de l’écran",
-      "C. ldpi correspond à une densité plus élevée que hdpi",
-      "D. Les ressources peuvent être placées dans des dossiers spécifiques comme drawable-ldpi, drawable-mdpi, drawable-hdpi",
-      "E. Fournir une ressource uniquement en hdpi empêche son affichage sur un écran mdpi"
+      "mdpi est considérée comme la densité de référence (baseline)",
+      "Android sélectionne automatiquement les ressources graphiques adaptées à la densité de l’écran",
+      "ldpi correspond à une densité plus élevée que hdpi",
+      "Les ressources peuvent être placées dans des dossiers spécifiques comme drawable-ldpi, drawable-mdpi, drawable-hdpi",
+      "Fournir une ressource uniquement en hdpi empêche son affichage sur un écran mdpi"
     ],
     "correctAnswers": [
       0,
@@ -749,11 +749,11 @@
     "id": 49,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les Services Android et l’utilisation de startService / arrêt d’un service ?",
     "options": [
-      "A. Un service démarré avec startService peut continuer à s’exécuter même si l’Activity appelante est détruite",
-      "B. Un service démarré doit être arrêté explicitement via stopService ou stopSelf",
-      "C. Un service démarre toujours sur un thread séparé",
-      "D. Le système Android peut arrêter un service pour récupérer des ressources",
-      "E. Un service démarré ne peut pas être redémarré après avoir été arrêté"
+      "Un service démarré avec startService peut continuer à s’exécuter même si l’Activity appelante est détruite",
+      "Un service démarré doit être arrêté explicitement via stopService ou stopSelf",
+      "Un service démarre toujours sur un thread séparé",
+      "Le système Android peut arrêter un service pour récupérer des ressources",
+      "Un service démarré ne peut pas être redémarré après avoir été arrêté"
     ],
     "correctAnswers": [
       0,
@@ -766,11 +766,11 @@
     "id": 50,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les méthodes onCreate, onDestroy et onBind d’un Service Android ?",
     "options": [
-      "A. onCreate est appelée une seule fois lors de la création du service",
-      "B. onDestroy est appelée lorsque le service est définitivement arrêté",
-      "C. onBind est appelée lorsqu’un composant se lie au service",
-      "D. onBind est appelée pour un service démarré uniquement avec startService",
-      "E. Un service lié utilise onBind pour exposer une interface de communication aux clients"
+      "onCreate est appelée une seule fois lors de la création du service",
+      "onDestroy est appelée lorsque le service est définitivement arrêté",
+      "onBind est appelée lorsqu’un composant se lie au service",
+      "onBind est appelée pour un service démarré uniquement avec startService",
+      "Un service lié utilise onBind pour exposer une interface de communication aux clients"
     ],
     "correctAnswers": [
       0,
@@ -784,11 +784,11 @@
     "id": 51,
     "question": "À propos de SavedStateHandle",
     "options": [
-      "A. Persiste après process death",
-      "B. Remplace ViewModel",
-      "C. Fonctionne avec Navigation",
-      "D. Sauvegarde automatiquement tout",
-      "E. Accessible dans ViewModel"
+      "Persiste après process death",
+      "Remplace ViewModel",
+      "Fonctionne avec Navigation",
+      "Sauvegarde automatiquement tout",
+      "Accessible dans ViewModel"
     ],
     "correctAnswers": [
       0,
@@ -801,11 +801,11 @@
     "id": 52,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les Fragments et les Activities en Android ?",
     "options": [
-      "A. Une Activity représente un écran complet et constitue un point d’entrée de l’application",
-      "B. Un Fragment est toujours hébergé par une Activity",
-      "C. Un Fragment peut exister indépendamment d’une Activity",
-      "D. Les Fragments permettent une UI plus modulaire et réutilisable",
-      "E. Une Activity partage automatiquement son cycle de vie avec tous ses Fragments"
+      "Une Activity représente un écran complet et constitue un point d’entrée de l’application",
+      "Un Fragment est toujours hébergé par une Activity",
+      "Un Fragment peut exister indépendamment d’une Activity",
+      "Les Fragments permettent une UI plus modulaire et réutilisable",
+      "Une Activity partage automatiquement son cycle de vie avec tous ses Fragments"
     ],
     "correctAnswers": [
       0,
@@ -818,11 +818,11 @@
     "id": 58,
     "question": "ConstraintLayout",
     "options": [
-      "A. Réduit la hiérarchie",
-      "B. Plus lent que LinearLayout",
-      "C. Supporte les chaînes",
-      "D. Oblige XML complexe",
-      "E. Déprécié"
+      "Réduit la hiérarchie",
+      "Plus lent que LinearLayout",
+      "Supporte les chaînes",
+      "Oblige XML complexe",
+      "Déprécié"
     ],
     "correctAnswers": [
       0,
@@ -834,11 +834,11 @@
     "id": 59,
     "question": "Concernant la navigation back",
     "options": [
-      "A. NavController gère le back stack",
-      "B. FragmentManager est obligatoire",
-      "C. PopBackStack possible",
-      "D. Le système ignore le graphe",
-      "E. Back est automatique partout"
+      "NavController gère le back stack",
+      "FragmentManager est obligatoire",
+      "PopBackStack possible",
+      "Le système ignore le graphe",
+      "Back est automatique partout"
     ],
     "correctAnswers": [
       0,
@@ -850,11 +850,11 @@
     "id": 65,
     "question": "Concernant coroutineScope",
     "options": [
-      "A. Attend toutes les coroutines enfants",
-      "B. Lance des GlobalScope",
-      "C. Propague les exceptions",
-      "D. Bloque le thread",
-      "E. Remplace supervisorScope"
+      "Attend toutes les coroutines enfants",
+      "Lance des GlobalScope",
+      "Propague les exceptions",
+      "Bloque le thread",
+      "Remplace supervisorScope"
     ],
     "correctAnswers": [
       0,
@@ -866,11 +866,11 @@
     "id": 67,
     "question": "Concernant ExceptionHandler",
     "options": [
-      "A. Intercepte les exceptions non catchées",
-      "B. Remplace try/catch",
-      "C. Appliqué au scope",
-      "D. Fonctionne avec async",
-      "E. Stoppe le thread"
+      "Intercepte les exceptions non catchées",
+      "Remplace try/catch",
+      "Appliqué au scope",
+      "Fonctionne avec async",
+      "Stoppe le thread"
     ],
     "correctAnswers": [
       0,
@@ -882,11 +882,11 @@
     "id": 68,
     "question": "Kotlin Result<T>",
     "options": [
-      "A. Encapsule succès/échec",
-      "B. Remplace exceptions",
-      "C. Immuable",
-      "D. Toujours recommandé",
-      "E. Bloque la stacktrace"
+      "Encapsule succès/échec",
+      "Remplace exceptions",
+      "Immuable",
+      "Toujours recommandé",
+      "Bloque la stacktrace"
     ],
     "correctAnswers": [
       0,
@@ -898,11 +898,11 @@
     "id": 70,
     "question": "Concernant Context",
     "options": [
-      "A. Activity est un Context",
-      "B. ApplicationContext survit toujours",
-      "C. Context peut causer des leaks",
-      "D. Context = View",
-      "E. Ne pas stocker Activity"
+      "Activity est un Context",
+      "ApplicationContext survit toujours",
+      "Context peut causer des leaks",
+      "Context = View",
+      "Ne pas stocker Activity"
     ],
     "correctAnswers": [
       0,
@@ -915,11 +915,11 @@
     "id": 73,
     "question": "Concernant les lambdas",
     "options": [
-      "A. Fonctions anonymes",
-      "B. Toujours inline",
-      "C. Supportent capture",
-      "D. Pas de retour",
-      "E. Bloquantes"
+      "Fonctions anonymes",
+      "Toujours inline",
+      "Supportent capture",
+      "Pas de retour",
+      "Bloquantes"
     ],
     "correctAnswers": [
       0,
@@ -931,11 +931,11 @@
     "id": 74,
     "question": "Kotlin immutabilité",
     "options": [
-      "A. val préféré",
-      "B. var interdit",
-      "C. Favorise thread-safety",
-      "D. Inutile en Android",
-      "E. Réduit bugs"
+      "val préféré",
+      "var interdit",
+      "Favorise thread-safety",
+      "Inutile en Android",
+      "Réduit bugs"
     ],
     "correctAnswers": [
       0,
@@ -948,14 +948,15 @@
     "id": 75,
     "question": "Considère le code Kotlin suivant :\nval a = 10 \nvar b = a \nval c: Number = a \nvar d: Int? = null \nLaquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) ?",
     "options": [
-      "A. a est une constante et ne peut jamais être modifiée",
-      "B. b peut être réassignée car son type est inféré comme Int",
-      "C. c ne peut pas être réassignée car son type explicite est Number",
-      "D. d ne peut accepter que null ou des Int",
-      "E. Le typage explicite empêche toute inférence du compilateur"
+      "a est une constante et ne peut jamais être modifiée",
+      "b peut être réassignée car son type est inféré comme Int",
+      "c ne peut pas être réassignée car son type explicite est Number",
+      "d ne peut accepter que null ou des Int",
+      "Le typage explicite empêche toute inférence du compilateur"
     ],
     "correctAnswers": [
-1,3
+      1,
+      3
     ],
     "explanation": "'val' déclare une variable en lecture seule (A). 'var' est mutable et 'b' est inféré comme Int (B). 'd' est un Int nullable, donc accepte Int ou null (D)."
   },
@@ -963,11 +964,11 @@
     "id": 76,
     "question": "Considère les instructions Kotlin suivantes :\nfor (i in 1..5) print(i) \nfor (i in 0 until 5) print(i) \nfor (i in 10 downTo 0 step 2) print(i) \nQuelle(s) affirmation(s) est/sont correcte(s) ?",
     "options": [
-      "A. L’opérateur .. inclut la borne supérieure",
-      "B. until exclut la borne supérieure",
-      "C. downTo permet une itération décroissante",
-      "D. step modifie la valeur finale de la borne",
-      "E. step définit l’incrément (ou décrément) entre deux valeurs successives"
+      "L’opérateur .. inclut la borne supérieure",
+      "until exclut la borne supérieure",
+      "downTo permet une itération décroissante",
+      "step modifie la valeur finale de la borne",
+      "step définit l’incrément (ou décrément) entre deux valeurs successives"
     ],
     "correctAnswers": [
       0,
@@ -981,11 +982,11 @@
     "id": 77,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les mots-clés open et final en Kotlin ?",
     "options": [
-      "A. En Kotlin, les classes sont final par défaut",
-      "B. Une classe marquée open peut être héritée",
-      "C. Une fonction doit être open pour pouvoir être appelée",
-      "D. Une fonction open peut être redéfinie (override) dans une sous-classe",
-      "E. Le mot-clé final empêche l’héritage ou la redéfinition"
+      "En Kotlin, les classes sont final par défaut",
+      "Une classe marquée open peut être héritée",
+      "Une fonction doit être open pour pouvoir être appelée",
+      "Une fonction open peut être redéfinie (override) dans une sous-classe",
+      "Le mot-clé final empêche l’héritage ou la redéfinition"
     ],
     "correctAnswers": [
       0,
@@ -999,11 +1000,11 @@
     "id": 78,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant ViewBinding et findViewById ?",
     "options": [
-      "A. ViewBinding fournit un accès type-safe aux vues",
-      "B. ViewBinding élimine le besoin d’appeler findViewById",
-      "C. findViewById est vérifié à la compilation",
-      "D. ViewBinding réduit le risque de NullPointerException",
-      "E. ViewBinding repose sur la réflexion à l’exécution"
+      "ViewBinding fournit un accès type-safe aux vues",
+      "ViewBinding élimine le besoin d’appeler findViewById",
+      "findViewById est vérifié à la compilation",
+      "ViewBinding réduit le risque de NullPointerException",
+      "ViewBinding repose sur la réflexion à l’exécution"
     ],
     "correctAnswers": [
       0,
@@ -1016,11 +1017,11 @@
     "id": 79,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant l’utilisation de startActivity dans une application Android ?",
     "options": [
-      "A. startActivity permet de lancer une nouvelle Activity via un Intent",
-      "B. Un Context valide est requis pour appeler startActivity",
-      "C. startActivity permet de récupérer directement un résultat",
-      "D. startActivity peut être utilisé avec un Intent explicite ou implicite",
-      "E. startActivity gère automatiquement le cycle de vie de l’Activity appelante"
+      "startActivity permet de lancer une nouvelle Activity via un Intent",
+      "Un Context valide est requis pour appeler startActivity",
+      "startActivity permet de récupérer directement un résultat",
+      "startActivity peut être utilisé avec un Intent explicite ou implicite",
+      "startActivity gère automatiquement le cycle de vie de l’Activity appelante"
     ],
     "correctAnswers": [
       0,
@@ -1033,11 +1034,11 @@
     "id": 80,
     "question": "Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant l’utilisation de putExtra et des méthodes getXXXExtra dans les Intent Android ?",
     "options": [
-      "A. putExtra permet d’ajouter des données supplémentaires à un Intent",
-      "B. getXXXExtra doit correspondre au type exact de la donnée stockée",
-      "C. Un Intent ne peut contenir qu’un seul extra",
-      "D. Les extras sont stockés sous forme de paires clé/valeur",
-      "E. getXXXExtra lève systématiquement une exception si la clé n’existe pas"
+      "putExtra permet d’ajouter des données supplémentaires à un Intent",
+      "getXXXExtra doit correspondre au type exact de la donnée stockée",
+      "Un Intent ne peut contenir qu’un seul extra",
+      "Les extras sont stockés sous forme de paires clé/valeur",
+      "getXXXExtra lève systématiquement une exception si la clé n’existe pas"
     ],
     "correctAnswers": [
       0,
