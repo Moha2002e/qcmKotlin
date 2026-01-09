@@ -65,6 +65,18 @@ const startQuiz = () => {
   gameState.value = 'playing';
 };
 
+const startRevisionQuiz = () => {
+  // Select 40 unique random questions
+  const shuffledAll = shuffleArray(allQuestions);
+  activeQuestions.value = shuffledAll.slice(0, 40);
+
+  currentQuestionIndex.value = 0;
+  score.value = 0;
+  currentSeries.value = -1; // Special indicator for revision mode
+  userAnswers.value = [];
+  gameState.value = 'playing';
+};
+
 const handleAnswer = (selectedIndices) => {
   const correctIndices = currentQuestion.value.correctAnswers.slice().sort((a, b) => a - b);
   const userIndices = selectedIndices.slice().sort((a, b) => a - b);
@@ -144,6 +156,14 @@ const prevFlashcard = () => {
             <div class="text-content">
                 <span class="title">Synthèse Technique</span>
                 <span class="desc">Fiches de révision par thème</span>
+            </div>
+          </button>
+
+          <button class="action-card glass-panel revision-btn" @click="startRevisionQuiz">
+            <span class="icon">🎯</span>
+            <div class="text-content">
+                <span class="title">Révision Complète</span>
+                <span class="desc">Série aléatoire de 40 questions</span>
             </div>
           </button>
         </div>
