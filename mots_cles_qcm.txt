@@ -1,0 +1,266 @@
+intent lesquelles vraies
+- Intent explicite
+- IntentFilter Intent
+- Intent service
+----------------------------------------
+pendingintent correctes ?
+- application d’exécuter
+- notifications requis
+- Broadcast encapsuler
+----------------------------------------
+activity cycle vie
+- onCreate appelé
+- onStop signifie
+- onDestroy appelé
+----------------------------------------
+intent android lesquelles
+- Android représentent
+- principalement utilisées
+- IntentFilter associées
+----------------------------------------
+fragment propos
+- fragment attaché
+- fragment distinct
+- fragment survivre
+----------------------------------------
+fragment correspond l’initialisation
+- onCreateView
+----------------------------------------
+kotlin lesquelles affirmations
+- lambda fonction
+- paramètre lambda
+- compilateur lambda
+----------------------------------------
+kotlin lesquelles affirmations
+- supérieur plusieurs
+- supérieur retourner
+- fonctions supérieur
+----------------------------------------
+propos lateinit
+- Uniquement types
+- fonctionne primitifs
+- exception initialisé
+----------------------------------------
+différence lateinit entre
+- thread défaut
+- uniquement lazy
+- primitives lateinit
+----------------------------------------
+coroutines propos
+- coroutine thread
+- coroutine suspendue
+- n’indique l’asynchronisme
+----------------------------------------
+exactement suspend fait
+- suspension Permet
+- fonctions suspendues
+----------------------------------------
+runblocking
+- Bloque thread
+- Utile tests
+----------------------------------------
+différence launch entre
+- retourne Deferred
+- nécessite async
+----------------------------------------
+dispatcher main
+- Exécute thread
+- Dispatchers immediate
+- Android Nécessite
+----------------------------------------
+l’annulation propos cancel
+- coopérative
+- suspending functions
+- propage enfants
+----------------------------------------
+exception annulation levée
+- CancellationException
+----------------------------------------
+fragment coroutine portée
+- viewLifecycleOwner lifecycleScope
+----------------------------------------
+recyclerview
+- ViewHolder recycle
+- ListView performant
+- nécessite Adapter
+----------------------------------------
+kotlin lesquelles affirmations
+- fonctions permettent
+- diffèrent d’accéder
+- améliorent lisibilité
+----------------------------------------
+kotlin lesquelles affirmations
+- Tout sauf vérification préalable
+----------------------------------------
+lesquelles affirmations suivantes
+- Tout sauf isCancelled isCompleted
+----------------------------------------
+viewbinding
+- compilation Généré
+- findViewById Supprime
+- Respecte safety
+----------------------------------------
+lesquelles affirmations suivantes
+- Tout sauf CoroutineDispatcher obligatoire
+----------------------------------------
+navigation component
+- Tout sauf Fonctionne fragments
+----------------------------------------
+kotlin lesquelles affirmations
+- suspending suspendre
+- suspending coroutine
+- Lorsqu’elle suspendue
+----------------------------------------
+navigation classe gère
+- NavController
+----------------------------------------
+responsabilité navhostfragment ?
+- destinations Afficher
+- fragments Créer
+----------------------------------------
+kotlin safety null
+- Tout sauf lateinit accepte
+----------------------------------------
+kotlin existent scope
+- let
+- apply
+- run
+- with
+- also
+----------------------------------------
+différence entre apply
+- Tout sauf modifie receiver
+----------------------------------------
+sealed class
+- Restreint l’héritage
+- exhaustif Utile
+- complexes Permet
+----------------------------------------
+propos when
+- exhaustif Peut
+- Fonctionne sealed
+- expression
+----------------------------------------
+inline vraie ?
+- l’overhead Réduit
+- Augmente taille
+- Utilisable reified
+----------------------------------------
+data class
+- hashCode Génèrent
+- Génèrent copy
+- Améliorent l’immuabilité
+----------------------------------------
+android kotlin pratique
+- Tout sauf Bloquer thread
+----------------------------------------
+lifecyclescope
+- automatiquement coroutines
+- LifecycleOwner Basé
+- memory Évite
+----------------------------------------
+différence lifecyclescope viewlifecycleowner
+- second lié
+- onDestroyView crashes
+----------------------------------------
+continuation<t> kotlin lesquelles
+- Tout sauf suspending systématiquement
+----------------------------------------
+android lesquelles affirmations
+- traduites spécifiques
+- Android sélectionne
+- rBE rUS
+----------------------------------------
+android lesquelles affirmations
+- Tout sauf automatiquement l’application
+----------------------------------------
+android lesquelles affirmations
+- Android interface
+- Android spécificités
+----------------------------------------
+android lesquelles affirmations
+- Tout sauf exclusivement compilation
+----------------------------------------
+android lesquelles affirmations
+- considérée référence
+- Android sélectionne
+- ressources spécifiques
+----------------------------------------
+android service lesquelles
+- startService service
+- stopService stopSelf
+- Android service
+----------------------------------------
+service android lesquelles
+- Tout sauf startService onBind
+----------------------------------------
+savedstatehandle propos
+- Persiste process
+- Fonctionne Navigation
+- ViewModel Accessible
+----------------------------------------
+android lesquelles affirmations
+- Activity représente
+- Fragment Activity
+- Fragments permettent
+----------------------------------------
+constraintlayout
+- hiérarchie Réduit
+- Supporte chaînes
+----------------------------------------
+navigation back
+- NavController gère
+- PopBackStack possible
+----------------------------------------
+coroutinescope
+- coroutines Attend
+- exceptions Propague
+----------------------------------------
+exceptionhandler
+- Intercepte exceptions
+- Appliqué scope
+----------------------------------------
+result<t> kotlin
+- Encapsule succès
+- Immuable
+----------------------------------------
+context
+- Activity Context
+- Context causer
+- Activity stocker
+----------------------------------------
+lambdas
+- Fonctions anonymes
+- Supportent capture
+----------------------------------------
+kotlin immutabilité
+- préféré val
+- Favorise thread
+- Réduit bugs
+----------------------------------------
+kotlin considère lesquelles
+- constante modifiée
+- réassignée inféré
+- accepter peut
+----------------------------------------
+kotlin considère instructions
+- Tout sauf modifie valeur
+----------------------------------------
+kotlin lesquelles affirmations
+- Tout sauf fonction pouvoir
+----------------------------------------
+lesquelles affirmations suivantes
+- ViewBinding fournit
+- ViewBinding findViewById
+- ViewBinding NullPointerException
+----------------------------------------
+android lesquelles affirmations
+- startActivity Activity
+- startActivity Context
+- startActivity Intent
+----------------------------------------
+intent android lesquelles
+- putExtra Intent
+- getXXXExtra correspondre
+- extras stockés
+----------------------------------------

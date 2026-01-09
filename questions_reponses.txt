@@ -1,0 +1,880 @@
+LISTE COMPLÈTE DES QUESTIONS ET RÉPONSES QCM ANDROID/KOTLIN
+===========================================================
+
+Question 1 :
+Concernant Intent, lesquelles sont vraies ?
+
+A. A. Un Intent explicite cible une classe précise [CORRECT]
+B. B. Un Intent implicite nécessite toujours un ComponentName
+C. C. Les Intent implicites utilisent les IntentFilter [CORRECT]
+D. D. Un Intent ne peut pas transporter d’objets complexes
+E. E. Un Intent peut être utilisé pour démarrer un service [CORRECT]
+
+Réponses correctes : A, C, E
+Explication : Un Intent explicite cible bien une classe (A). Les Intent implicites reposent sur des IntentFilters pour trouver le composant adéquat (C). Depuis Android, il est courant d'utiliser des Intents pour démarrer des services (E), bien que startService soit moins utilisé au profit de JobScheduler/WorkManager, c'est techniquement vrai.
+
+-----------------------------------------------------------
+
+Question 2 :
+Quelle(s) affirmation(s) sur PendingIntent sont correctes ?
+
+A. A. Il permet à une application externe d’exécuter une action dans votre contexte [CORRECT]
+B. B. Il est toujours lié à une Activity
+C. C. Il est requis pour les notifications [CORRECT]
+D. D. Il remplace un Intent
+E. E. Il peut encapsuler un Broadcast [CORRECT]
+
+Réponses correctes : A, C, E
+Explication : Le PendingIntent est un jeton donné à une application étrangère (comme le NotificationManager ou l'AlarmManager) lui permettant d'exécuter une action avec les permissions de votre application (A). Il est indispensable pour rendre une notification cliquable (C). Il peut encapsuler un Intent de démarrage d'Activity, de Service ou d'émission de Broadcast (E).
+
+-----------------------------------------------------------
+
+Question 4 :
+Concernant le cycle de vie d’une Activity
+
+A. A. onCreate() est appelé une seule fois par instance [CORRECT]
+B. B. onPause() garantit que l’activité est détruite
+C. C. onStop() signifie que l’UI n’est plus visible [CORRECT]
+D. D. onRestart() est appelé après onCreate()
+E. E. onDestroy() peut ne jamais être appelé [CORRECT]
+
+Réponses correctes : A, C, E
+Explication : onCreate est le point d'entrée unique (A). onStop est appelé quand l'activité n'est plus visible par l'utilisateur (C). Le système peut tuer le processus sans appeler onDestroy en cas de besoin mémoire urgent, donc onDestroy n'est pas garanti (E).
+
+-----------------------------------------------------------
+
+Question 5 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les constantes Intent.ACTION_* en Android ?
+
+A. A. Elles représentent des actions standard reconnues par le système Android [CORRECT]
+B. B. Elles sont principalement utilisées avec des Intents implicites [CORRECT]
+C. C. Intent.ACTION_* permet de cibler directement une Activity précise
+D. D. Elles peuvent être associées à des IntentFilter dans le manifeste [CORRECT]
+E. E. Elles remplacent l’utilisation des ComponentName
+
+Réponses correctes : A, B, D
+Explication : Ce sont des chaînes standard (A) comme ACTION_VIEW ou ACTION_SEND, utilisées pour des Intents implicites (B) afin que n'importe quelle app compatible (déclarant ce filtre dans son manifeste, D) puisse y répondre.
+
+-----------------------------------------------------------
+
+Question 6 :
+À propos des Fragment
+
+A. A. Un fragment doit être attaché à une activité [CORRECT]
+B. B. Un fragment possède son propre Context
+C. C. Un fragment a un cycle de vie distinct [CORRECT]
+D. D. Les fragments sont dépréciés
+E. E. Un fragment peut survivre à une rotation [CORRECT]
+
+Réponses correctes : A, C, E
+Explication : Un Fragment vit nécessairement au sein d'une Activity (A) et possède un cycle de vie complexe lié mais distinct de celle-ci (C). Avec setRetainInstance(true) (bien que déprécié au profit des ViewModels), ou simplement via le mécanisme de restauration d'état, l'instance du fragment peut être conservée lors d'une changement de configuration (E).
+
+-----------------------------------------------------------
+
+Question 7 :
+Quelle méthode correspond à l’initialisation de la vue d’un fragment ?
+
+A. A. onAttach()
+B. B. onCreateView() [CORRECT]
+C. C. onCreate()
+D. D. onViewCreated()
+E. E. onStart()
+
+Réponses correctes : B
+Explication : onCreateView() est la méthode où vous devez inflater le layout XML et retourner la Vue racine du fragment.
+
+-----------------------------------------------------------
+
+Question 8 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les expressions lambda en Kotlin ?
+
+A. A. Une lambda est une fonction anonyme [CORRECT]
+B. B. Une lambda peut être passée comme paramètre à une fonction [CORRECT]
+C. C. Une lambda ne peut pas capturer de variables externes
+D. D. Le type d’une lambda peut être inféré par le compilateur [CORRECT]
+E. E. Une lambda ne peut pas retourner de valeur
+
+Réponses correctes : A, B, D
+Explication : Une lambda est bien une fonction sans nom (A), très souvent passée en paramètre (B). Kotlin infère son type (D). Contrairement à ce que dit C, elle peut capturer des variables (closure) et elle retourne la valeur de sa dernière expression (donc E est faux).
+
+-----------------------------------------------------------
+
+Question 9 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les fonctions d’ordre supérieur en Kotlin ?
+
+A. A. Une fonction d’ordre supérieur peut prendre une ou plusieurs fonctions en paramètre [CORRECT]
+B. B. Une fonction d’ordre supérieur peut retourner une fonction [CORRECT]
+C. C. Une fonction d’ordre supérieur doit obligatoirement être inline
+D. D. Les fonctions d’ordre supérieur sont largement utilisées avec les lambdas [CORRECT]
+E. E. Une fonction d’ordre supérieur ne peut pas être stockée dans une variable
+
+Réponses correctes : A, B, D
+Explication : C'est la définition même : prend des fonctions en paramètres ou en retourne (A, B). Elles sont conçues pour être utilisées avec des lambdas (D). Elles ne sont pas obligatoirement inline, bien que cela soit recommandé pour les performances.
+
+-----------------------------------------------------------
+
+Question 10 :
+À propos de lateinit
+
+A. A. Uniquement pour les types non-null [CORRECT]
+B. B. Ne fonctionne pas avec les types primitifs [CORRECT]
+C. C. Peut être utilisé avec val
+D. D. Provoque une exception si non initialisé [CORRECT]
+E. E. Compatible avec lazy
+
+Réponses correctes : A, B, D
+Explication : lateinit s'applique aux variables mutables (var) non-nulles (A). Elle ne supporte pas les types primitifs comme Int ou Boolean (B) car elle se base sur null en interne. Accéder à une propriété lateinit non initialisée lève une UninitializedPropertyAccessException (D).
+
+-----------------------------------------------------------
+
+Question 11 :
+Différence entre lazy et lateinit
+
+A. A. lazy est thread-safe par défaut [CORRECT]
+B. B. lazy est uniquement pour val [CORRECT]
+C. C. lateinit ne supporte pas les primitives [CORRECT]
+D. D. lateinit est évalué à l’accès
+E. E. lazy peut être réassigné
+
+Réponses correctes : A, B, C
+Explication : Lazy est une délégation pour les constantes (val) (B) qui initialise la valeur au premier accès de manière thread-safe (A). Lateinit est pour les variables (var) et ne marche pas, entre autres, avec les types primitifs (C).
+
+-----------------------------------------------------------
+
+Question 12 :
+À propos des coroutines
+
+A. A. Une coroutine n’est pas un thread [CORRECT]
+B. B. Une coroutine peut être suspendue [CORRECT]
+C. C. Une coroutine bloque toujours le thread
+D. D. suspend n’indique pas l’asynchronisme [CORRECT]
+E. E. Une coroutine survit à la mort du process
+
+Réponses correctes : A, B, D
+Explication : Une coroutine est un 'lightweight thread' géré par l'utilisateur, pas par l'OS (A). Elle peut être suspendue sans bloquer le thread sous-jacent (B). Le mot-clé suspend indique seulement qu'une fonction peut suspendre l'exécution, pas nécessairement qu'elle s'exécute sur un autre thread (D).
+
+-----------------------------------------------------------
+
+Question 13 :
+Que fait exactement suspend ?
+
+A. A. Rend la fonction asynchrone
+B. B. Crée un thread
+C. C. Permet la suspension sans bloquer [CORRECT]
+D. D. Peut appeler d’autres fonctions suspendues [CORRECT]
+E. E. Garantit un contexte IO
+
+Réponses correctes : C, D
+Explication : Le mot-clé suspend marque une fonction qui peut mettre en pause son exécution sans bloquer le thread courant (C). Seules les fonctions suspendues ou les coroutines peuvent appeler d'autres fonctions suspendues (D).
+
+-----------------------------------------------------------
+
+Question 14 :
+Concernant runBlocking
+
+A. A. Bloque le thread courant [CORRECT]
+B. B. À utiliser en production Android
+C. C. Utile pour les tests [CORRECT]
+D. D. Remplace launch
+E. E. Fonctionne uniquement sur Main thread
+
+Réponses correctes : A, C
+Explication : runBlocking démarre une coroutine et bloque le thread courant jusqu'à sa fin (A). C'est à éviter dans le code de production (pour ne pas figer l'UI), mais c'est très utile pour les tests unitaires ou les scripts (C).
+
+-----------------------------------------------------------
+
+Question 15 :
+Quelle est la différence entre launch et async ?
+
+A. A. launch retourne une valeur
+B. B. async retourne un Deferred [CORRECT]
+C. C. async nécessite await() [CORRECT]
+D. D. launch bloque
+E. E. async ne peut pas être annulé
+
+Réponses correctes : B, C
+Explication : Async est conçu pour calculer une valeur de manière asynchrone : il retourne un Deferred<T> (B) sur lequel on doit appeler await() pour récupérer le résultat (C). Launch retourne un Job et ne produit pas de résultat.
+
+-----------------------------------------------------------
+
+Question 16 :
+Concernant Dispatcher.Main
+
+A. A. Exécute sur le thread UI [CORRECT]
+B. B. Peut être utilisé pour IO intensif
+C. C. Requiert Dispatchers.Main.immediate pour éviter un post [CORRECT]
+D. D. Est toujours disponible
+E. E. Nécessite Android [CORRECT]
+
+Réponses correctes : A, C, E
+Explication : Dispatcher.Main utilise le thread principal (UI) d'Android (A). Il n'est disponible que sur les plateformes ayant une UI (Android, JavaFx...), donc E est vrai. Main.immediate est une optimisation pour exécuter la coroutine tout de suite si on est déjà sur le bon thread, évitant un dispatch inutile (C).
+
+-----------------------------------------------------------
+
+Question 17 :
+À propos de l’annulation (cancel)
+
+A. A. Elle est coopérative [CORRECT]
+B. B. Elle stoppe immédiatement la coroutine
+C. C. Les suspending functions la respectent [CORRECT]
+D. D. Elle tue le thread
+E. E. Elle propage aux enfants [CORRECT]
+
+Réponses correctes : A, C, E
+Explication : L'annulation en Kotlin est coopérative (A) : le code de la coroutine doit vérifier s'il est actif. Les fonctions de suspension standard vérifient l'annulation (C). L'annulation d'un parent entraîne celle de tous ses enfants (E).
+
+-----------------------------------------------------------
+
+Question 18 :
+Quelle exception est levée lors d’une annulation ?
+
+A. A. TimeoutException
+B. B. IllegalStateException
+C. C. CancellationException [CORRECT]
+D. D. IOException
+E. E. RuntimeException
+
+Réponses correctes : C
+Explication : L'annulation d'une coroutine se fait en jetant une CancellationException. C'est une exception spéciale qui est ignorée par les mécanismes de crash standard mais qui arrête la coroutine.
+
+-----------------------------------------------------------
+
+Question 19 :
+Quelle est la portée correcte pour une coroutine liée à un Fragment ?
+
+A. A. GlobalScope
+B. B. MainScope
+C. C. viewLifecycleOwner.lifecycleScope [CORRECT]
+D. D. activityScope
+E. E. applicationScope
+
+Réponses correctes : C
+Explication : Dans un Fragment, il faut utiliser viewLifecycleOwner.lifecycleScope pour que les coroutines s'arrêtent lorsque la VUE du fragment est détruite (et pas seulement l'instance du fragment), évitant ainsi des leaks ou des crashs.
+
+-----------------------------------------------------------
+
+Question 20 :
+Concernant RecyclerView
+
+A. A. Il recycle les ViewHolder [CORRECT]
+B. B. Il est plus performant que ListView [CORRECT]
+C. C. Il impose un layout vertical
+D. D. Il nécessite un Adapter [CORRECT]
+E. E. Il gère automatiquement les clics
+
+Réponses correctes : A, B, D
+Explication : RecyclerView est conçu pour afficher de grandes listes efficacement en recyclant les vues via le pattern ViewHolder (A, B). Il a absolument besoin d'un Adapter pour faire le lien avec les données (D). Il n'impose pas de layout (LayoutManager flexible) et ne gère pas les clics nativement (il faut les gérer dans le ViewHolder).
+
+-----------------------------------------------------------
+
+Question 21 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les fonctions de portée (let, run, apply, also, with) en Kotlin ?
+
+A. A. Les fonctions de portée permettent d’exécuter un bloc de code dans le contexte d’un objet [CORRECT]
+B. B. Elles diffèrent par la valeur de retour et la manière d’accéder au receiver (this ou it) [CORRECT]
+C. C. Toutes les fonctions de portée retournent toujours l’objet receiver
+D. D. Elles améliorent la lisibilité et réduisent le code répétitif [CORRECT]
+E. E. Les fonctions de portée remplacent les classes et les fonctions classiques
+
+Réponses correctes : A, B, D
+Explication : Ces fonctions créent un scope temporaire autour d'un objet (A). Elles se distinguent par le contexte (this vs it) et le retour (résultat du bloc vs objet lui-même) (B). Elles servent à rendre le code plus concis et fluide (D).
+
+-----------------------------------------------------------
+
+Question 22 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les fonctions de portée Kotlin (let, run, with, apply, also) ?
+
+A. A. let et also utilisent it comme contexte d’accès à l’objet [CORRECT]
+B. B. apply et also retournent l’objet receiver [CORRECT]
+C. C. run et with retournent le résultat du dernier bloc exécuté [CORRECT]
+D. D. with peut être appelé sur un objet nullable sans vérification préalable
+E. E. apply est particulièrement adapté à la configuration ou au pattern builder [CORRECT]
+
+Réponses correctes : A, B, C, E
+Explication : Let/Also utilisent l'argument par défaut 'it' (A). Apply/Also retournent l'objet lui-même, idéal pour le chaînage (B). Run/With retournent le résultat de la lambda (C). Apply change le contexte en 'this' et retourne l'objet, parfait pour configurer un objet à sa création (E).
+
+-----------------------------------------------------------
+
+Question 23 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les propriétés isActive, isCancelled et isCompleted d’une coroutine (Job) ?
+
+A. A. isActive est vrai tant que la coroutine s’exécute ou peut encore s’exécuter [CORRECT]
+B. B. isCancelled devient vrai lorsqu’une annulation est demandée, même si la coroutine n’est pas encore terminée [CORRECT]
+C. C. isCompleted devient vrai uniquement lorsque la coroutine a terminé son exécution (succès ou échec) [CORRECT]
+D. D. isCancelled et isCompleted sont toujours vrais simultanément
+E. E. Une coroutine annulée est considérée comme complétée (isCompleted == true) une fois son exécution terminée [CORRECT]
+
+Réponses correctes : A, B, C, E
+Explication : isActive est vrai au démarrage. isCancelled passe à vrai dès l'appel à cancel(), même si le code de nettoyage tourne encore (B). isCompleted est l'état final, atteint après succès, échec ou annulation complète (C, E).
+
+-----------------------------------------------------------
+
+Question 24 :
+Concernant ViewBinding
+
+A. A. Généré à la compilation [CORRECT]
+B. B. Utilise la réflexion
+C. C. Supprime findViewById [CORRECT]
+D. D. Est plus lent que DataBinding
+E. E. Respecte le type-safety [CORRECT]
+
+Réponses correctes : A, C, E
+Explication : ViewBinding génère une classe Java/Kotlin pour chaque XML à la compilation (A), éliminant findViewById (C) et les casts risqués, garantissant ainsi le type-safety (E) et la null-safety.
+
+-----------------------------------------------------------
+
+Question 25 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant CoroutineContext, CoroutineDispatcher et CoroutineScope ?
+
+A. A. CoroutineContext est une collection d’éléments décrivant l’environnement d’exécution d’une coroutine [CORRECT]
+B. B. CoroutineDispatcher détermine sur quel thread ou pool de threads la coroutine s’exécute [CORRECT]
+C. C. CoroutineScope définit la durée de vie des coroutines qu’il lance [CORRECT]
+D. D. CoroutineDispatcher est obligatoire pour lancer une coroutine
+E. E. Un CoroutineScope combine généralement un CoroutineContext et un Job [CORRECT]
+
+Réponses correctes : A, B, C, E
+Explication : Le Contexte contient les éléments de config (A). Le Dispatcher gère les threads (B). Le Scope définit la portée/durée de vie (C) et contient un contexte (E).
+
+-----------------------------------------------------------
+
+Question 26 :
+Concernant Navigation Component
+
+A. A. Gère le back stack [CORRECT]
+B. B. Remplace FragmentManager [CORRECT]
+C. C. Utilise un NavGraph [CORRECT]
+D. D. Fonctionne sans fragments
+E. E. Facilite SafeArgs [CORRECT]
+
+Réponses correctes : A, B, C, E
+Explication : Navigation Component simplifie la navigation en gérant la pile retour (A) et les transactions de fragments (B) via un graphe XML (C). SafeArgs génère du code pour passer des arguments typés entre destinations (E).
+
+-----------------------------------------------------------
+
+Question 27 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant une suspending function en Kotlin ?
+
+A. A. Une suspending function peut suspendre son exécution sans bloquer le thread [CORRECT]
+B. B. Une suspending function ne peut être appelée que depuis une coroutine ou une autre suspending function [CORRECT]
+C. C. Une suspending function crée automatiquement un nouveau thread
+D. D. Lorsqu’elle est suspendue, le thread peut exécuter d’autres tâches [CORRECT]
+E. E. Une suspending function garantit une exécution parallèle
+
+Réponses correctes : A, B, D
+Explication : Une fonction suspend est une fonction qui peut faire pause (A) sans bloquer le thread (D), permettant à celui-ci de faire autre chose. Elle doit être appelée dans un contexte de suspension (B).
+
+-----------------------------------------------------------
+
+Question 28 :
+Quelle classe gère la navigation ?
+
+A. A. FragmentManager
+B. B. NavController [CORRECT]
+C. C. NavHost
+D. D. Router
+E. E. ActivityManager
+
+Réponses correctes : B
+Explication : Le NavController est l'objet central qui orchestre l'échange de contenu dans le NavHost.
+
+-----------------------------------------------------------
+
+Question 29 :
+Quelle est la responsabilité de NavHostFragment ?
+
+A. A. Gérer les intents
+B. B. Afficher les destinations [CORRECT]
+C. C. Créer les fragments [CORRECT]
+D. D. Sauvegarder l’état
+E. E. Gérer ViewBinding
+
+Réponses correctes : B, C
+Explication : Le NavHostFragment agit comme un conteneur qui affiche et échange les destinations (fragments) (B, C) en fonction de la navigation.
+
+-----------------------------------------------------------
+
+Question 30 :
+Concernant Kotlin null-safety
+
+A. A. ? rend nullable [CORRECT]
+B. B. !! peut lever une exception [CORRECT]
+C. C. ?: est un opérateur Elvis [CORRECT]
+D. D. let évite les NPE [CORRECT]
+E. E. lateinit accepte null
+
+Réponses correctes : A, B, C, D
+Explication : '?' marque un type nullable (A). '!!' force le déballage et crash si null (B). '?:' fournit une valeur par défaut si null (C). '?.let {}' permet d'exécuter du code seulement si l'objet n'est pas null (D).
+
+-----------------------------------------------------------
+
+Question 31 :
+Quel(s) scope(s) Kotlin existent ?
+
+A. A. let [CORRECT]
+B. B. apply [CORRECT]
+C. C. run [CORRECT]
+D. D. with [CORRECT]
+E. E. also [CORRECT]
+
+Réponses correctes : A, B, C, D, E
+Explication : Tous (let, run, with, apply, also) sont des fonctions de portée (scope functions) standard en Kotlin.
+
+-----------------------------------------------------------
+
+Question 32 :
+Différence entre apply et also
+
+A. A. apply retourne le receiver [CORRECT]
+B. B. also retourne le receiver [CORRECT]
+C. C. apply utilise this [CORRECT]
+D. D. also utilise it [CORRECT]
+E. E. also modifie le receiver
+
+Réponses correctes : A, B, C, D
+Explication : Les deux retournent l'objet (A, B). Mais 'apply' expose l'objet via 'this' (C) (idéal pour initialisation), tandis que 'also' l'expose via 'it' (D) (idéal pour effets de bord comme le logging).
+
+-----------------------------------------------------------
+
+Question 33 :
+Concernant sealed class
+
+A. A. Restreint l’héritage [CORRECT]
+B. B. Peut être étendue partout
+C. C. Utile pour when exhaustif [CORRECT]
+D. D. Remplacée par enum
+E. E. Permet des états complexes [CORRECT]
+
+Réponses correctes : A, C, E
+Explication : Une sealed class restreint l'héritage à un ensemble connu à la compilation (A), ce qui permet des instructions 'when' exhaustives sans branche 'else' (C). Contrairement aux enums, elles peuvent avoir des instances avec des états différents (E).
+
+-----------------------------------------------------------
+
+Question 34 :
+À propos de when
+
+A. A. Peut être exhaustif [CORRECT]
+B. B. Remplace if uniquement
+C. C. Fonctionne avec sealed class [CORRECT]
+D. D. Est une expression [CORRECT]
+E. E. Ne retourne rien
+
+Réponses correctes : A, C, D
+Explication : 'when' est une expression qui peut retourner une valeur (D). Il est particulièrement puissant avec les sealed classes où le compilateur vérifie l'exhaustivité (A, C).
+
+-----------------------------------------------------------
+
+Question 36 :
+Quelle affirmation est vraie sur inline ?
+
+A. A. Réduit l’overhead lambda [CORRECT]
+B. B. Augmente la taille du bytecode [CORRECT]
+C. C. Utilisable avec reified [CORRECT]
+D. D. Obligatoire
+E. E. Désactivée sur Android
+
+Réponses correctes : A, B, C
+Explication : L'inlining copie le corps de la fonction au lieu de l'appeler, ce qui évite la création d'objets pour les lambdas (A) mais augmente la taille du code compiler (B). C'est nécessaire pour supporter les types 'reified' (C).
+
+-----------------------------------------------------------
+
+Question 38 :
+Concernant les data class
+
+A. A. Génèrent equals/hashCode [CORRECT]
+B. B. Génèrent copy() [CORRECT]
+C. C. Peuvent être abstract
+D. D. Peuvent être sealed
+E. E. Améliorent l’immuabilité [CORRECT]
+
+Réponses correctes : A, B, E
+Explication : Les data classes sont faites pour stocker des données. Le compilateur génère automatiquement equals, hashCode, toString et copy (A, B). Elles encouragent l'utilisation de propriétés 'val', favorisant l'immuabilité (E).
+
+-----------------------------------------------------------
+
+Question 40 :
+Quelle(s) bonne(s) pratique(s) Android/Kotlin ?
+
+A. A. Éviter GlobalScope [CORRECT]
+B. B. Utiliser lifecycleScope [CORRECT]
+C. C. Bloquer le thread Main
+D. D. Préférer immutabilité [CORRECT]
+E. E. Limiter les context leaks [CORRECT]
+
+Réponses correctes : A, B, D, E
+Explication : GlobalScope ne respecte pas le cycle de vie (A). LifecycleScope est plus sûr (B). L'immuabilité réduit les effets de bord (D). Les fuites de contexte (Memory Leaks) sont critiques en Android (E).
+
+-----------------------------------------------------------
+
+Question 41 :
+Concernant lifecycleScope
+
+A. A. Disponible uniquement dans les fragments
+B. B. Annule automatiquement les coroutines à la destruction [CORRECT]
+C. C. Basé sur le LifecycleOwner [CORRECT]
+D. D. Exécute toujours sur Dispatchers.IO
+E. E. Évite les memory leaks [CORRECT]
+
+Réponses correctes : B, C, E
+Explication : Il est lié à tout LifecycleOwner (Activity, Fragment...) (C). Il annule automatiquement les tâches quand le cycle de vie est détruit (B), prévenant ainsi les fuites de mémoire (E).
+
+-----------------------------------------------------------
+
+Question 42 :
+Différence entre lifecycleScope et viewLifecycleOwner.lifecycleScope
+
+A. A. Ils sont identiques
+B. B. Le second est lié au cycle de vie de la vue [CORRECT]
+C. C. Évite les crashes après onDestroyView() [CORRECT]
+D. D. Le premier est déprécié
+E. E. Le second fonctionne dans une Activity
+
+Réponses correctes : B, C
+Explication : Dans un Fragment, l'instance du Fragment survit plus longtemps que sa Vue. viewLifecycleOwner suit la Vue (B). Utiliser le scope de la vue évite de tenter de mettre à jour une vue détruite (C).
+
+-----------------------------------------------------------
+
+Question 43 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les suspending functions et le mécanisme de Continuation<T> en Kotlin ?
+
+A. A. Une suspending function est compilée avec un paramètre implicite de type Continuation<T> [CORRECT]
+B. B. Continuation<T> représente la suite de l’exécution après un point de suspension [CORRECT]
+C. C. Une suspending function crée systématiquement un nouveau thread
+D. D. Le compilateur transforme une suspending function en machine à états [CORRECT]
+E. E. La suspension permet de libérer le thread sans consommer de ressources importantes [CORRECT]
+
+Réponses correctes : A, B, D, E
+Explication : En interne, le compilateur transforme le code en CPS (Continuation Passing Style) (A, B) et génère une machine à états (D). Cela permet de suspendre l'exécution et de libérer le thread (E) sans en créer de nouveaux à chaque fois.
+
+-----------------------------------------------------------
+
+Question 44 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant l’internationalisation (i18n) et l’utilisation des fichiers de ressources dans Android ?
+
+A. A. Les chaînes traduites sont définies dans des fichiers strings.xml spécifiques par langue [CORRECT]
+B. B. Android sélectionne automatiquement les ressources en fonction de la locale du système [CORRECT]
+C. C. Les fichiers de ressources internationalisées doivent être chargés manuellement dans le code
+D. D. Il est possible de définir des variantes régionales (ex. fr-rBE, en-rUS) [CORRECT]
+E. E. L’internationalisation empêche toute modification dynamique de la langue de l’application
+
+Réponses correctes : A, B, D
+Explication : Android utilise un système de qualificateurs de ressources (ex: values-fr) (A, D) et charge automatiquement la bonne ressource selon la configuration du device (B).
+
+-----------------------------------------------------------
+
+Question 45 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant Configuration, l’accès via getConfiguration() et l’utilisation de Locale en Android ?
+
+A. A. getConfiguration() permet d’accéder à la configuration courante de l’appareil (langue, orientation, densité, etc.) [CORRECT]
+B. B. La langue courante peut être obtenue à partir de Configuration.locale ou Configuration.locales selon la version d’Android [CORRECT]
+C. C. Modifier un objet Locale met automatiquement à jour la langue de l’application
+D. D. À partir d’Android 7.0, plusieurs locales peuvent être définies via LocaleList [CORRECT]
+E. E. Un changement de Configuration peut déclencher la recréation d’une Activity [CORRECT]
+
+Réponses correctes : A, B, D, E
+Explication : L'objet Configuration reflète l'état actuel (A). Depuis Android 7 (Nougat), on supporte les listes de langues préférées (B, D). Un changement de config (rotation, langue) redémarre l'activité par défaut (E).
+
+-----------------------------------------------------------
+
+Question 46 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant l’architecture Android et les rôles respectifs des Libraries, de la HAL (Hardware Abstraction Layer) et du hardware ?
+
+A. A. La HAL fournit une interface standardisée entre le framework Android et le matériel [CORRECT]
+B. B. Les Libraries Android offrent des fonctionnalités de haut niveau accessibles aux applications
+C. C. Le hardware est directement manipulé par les applications Android
+D. D. La HAL permet d’isoler Android des spécificités matérielles des constructeurs [CORRECT]
+E. E. Les Libraries remplacent la HAL pour l’accès aux composants matériels
+
+Réponses correctes : A, D
+Explication : La HAL (Hardware Abstraction Layer) est cruciale : elle définit une interface standard que les constructeurs de téléphones doivent implémenter pour que le Framework Android puisse parler au matériel (A, D) sans connaître les détails spécifiques des puces.
+
+-----------------------------------------------------------
+
+Question 47 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant la machine virtuelle Dalvik dans l’écosystème Android ?
+
+A. A. Dalvik est une machine virtuelle conçue spécifiquement pour les appareils mobiles Android [CORRECT]
+B. B. Dalvik exécute des fichiers au format .dex (Dalvik Executable) [CORRECT]
+C. C. Dalvik utilise exclusivement la compilation AOT (Ahead-Of-Time)
+D. D. Dalvik a été remplacée progressivement par ART à partir d’Android 5.0 [CORRECT]
+E. E. Dalvik fonctionne avec un modèle “une VM par application” afin d’isoler les apps [CORRECT]
+
+Réponses correctes : A, B, D, E
+Explication : Dalvik était la VM d'origine d'Android (A), utilisant le format .dex (B) et le JIT (Just-In-Time). Elle a été remplacée par ART (Android Runtime) qui utilise l'AOT (Ahead-Of-Time) (D). Chaque app tourne dans son propre processus avec sa propre instance de VM (E).
+
+-----------------------------------------------------------
+
+Question 48 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les densités d’écran (ldpi, mdpi, hdpi) et la gestion des ressources Android ?
+
+A. A. mdpi est considérée comme la densité de référence (baseline) [CORRECT]
+B. B. Android sélectionne automatiquement les ressources graphiques adaptées à la densité de l’écran [CORRECT]
+C. C. ldpi correspond à une densité plus élevée que hdpi
+D. D. Les ressources peuvent être placées dans des dossiers spécifiques comme drawable-ldpi, drawable-mdpi, drawable-hdpi [CORRECT]
+E. E. Fournir une ressource uniquement en hdpi empêche son affichage sur un écran mdpi
+
+Réponses correctes : A, B, D
+Explication : mdpi (160dpi) est la base (1px = 1dp) (A). Android scale automatiquement les ressources (B). On fournit souvent différentes versions dans des dossiers qualifiés (D). ldpi est 'low' density, donc plus faible que hdpi (high).
+
+-----------------------------------------------------------
+
+Question 49 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les Services Android et l’utilisation de startService / arrêt d’un service ?
+
+A. A. Un service démarré avec startService peut continuer à s’exécuter même si l’Activity appelante est détruite [CORRECT]
+B. B. Un service démarré doit être arrêté explicitement via stopService ou stopSelf [CORRECT]
+C. C. Un service démarre toujours sur un thread séparé
+D. D. Le système Android peut arrêter un service pour récupérer des ressources [CORRECT]
+E. E. Un service démarré ne peut pas être redémarré après avoir été arrêté
+
+Réponses correctes : A, B, D
+Explication : Les Services tournent par défaut sur le Main Thread (donc C est faux). Une fois démarré (Started Service), il vit sa vie indépendamment de l'appelant (A) jusqu'à ce qu'il soit stoppé explicitement (B) ou tué par le système (D).
+
+-----------------------------------------------------------
+
+Question 50 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les méthodes onCreate, onDestroy et onBind d’un Service Android ?
+
+A. A. onCreate est appelée une seule fois lors de la création du service [CORRECT]
+B. B. onDestroy est appelée lorsque le service est définitivement arrêté [CORRECT]
+C. C. onBind est appelée lorsqu’un composant se lie au service [CORRECT]
+D. D. onBind est appelée pour un service démarré uniquement avec startService
+E. E. Un service lié utilise onBind pour exposer une interface de communication aux clients [CORRECT]
+
+Réponses correctes : A, B, C, E
+Explication : onCreate initialisation unique (A). onBind est spécifique au Binding (liaison) entre composants (C, E) et retourne un IBinder. onDestroy pour le nettoyage final (B).
+
+-----------------------------------------------------------
+
+Question 51 :
+À propos de SavedStateHandle
+
+A. A. Persiste après process death [CORRECT]
+B. B. Remplace ViewModel
+C. C. Fonctionne avec Navigation [CORRECT]
+D. D. Sauvegarde automatiquement tout
+E. E. Accessible dans ViewModel [CORRECT]
+
+Réponses correctes : A, C, E
+Explication : SavedStateHandle permet de sauvegarder de petites données qui survèvent à l'arrêt du processus par le système (A). Il est intégré aux ViewModels (E) et fonctionne bien avec les arguments de Navigation (C).
+
+-----------------------------------------------------------
+
+Question 52 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les Fragments et les Activities en Android ?
+
+A. A. Une Activity représente un écran complet et constitue un point d’entrée de l’application [CORRECT]
+B. B. Un Fragment est toujours hébergé par une Activity [CORRECT]
+C. C. Un Fragment peut exister indépendamment d’une Activity
+D. D. Les Fragments permettent une UI plus modulaire et réutilisable [CORRECT]
+E. E. Une Activity partage automatiquement son cycle de vie avec tous ses Fragments
+
+Réponses correctes : A, B, D
+Explication : L'Activity est le contenant principal (A). Les Fragments sont des composants d'UI modulaires (D) qui doivent vivre dans une Activity (B).
+
+-----------------------------------------------------------
+
+Question 58 :
+ConstraintLayout
+
+A. A. Réduit la hiérarchie [CORRECT]
+B. B. Plus lent que LinearLayout
+C. C. Supporte les chaînes [CORRECT]
+D. D. Oblige XML complexe
+E. E. Déprécié
+
+Réponses correctes : A, C
+Explication : ConstraintLayout permet de créer des layouts complexes à plat, réduisant l'imbrication des vues (A). Il offre des fonctionnalités avancées comme les chaînes (chains) de vues (C).
+
+-----------------------------------------------------------
+
+Question 59 :
+Concernant la navigation back
+
+A. A. NavController gère le back stack [CORRECT]
+B. B. FragmentManager est obligatoire
+C. C. PopBackStack possible [CORRECT]
+D. D. Le système ignore le graphe
+E. E. Back est automatique partout
+
+Réponses correctes : A, C
+Explication : Avec Navigation Component, le NavController gère la pile de retour (A). La fonction popBackStack() permet de revenir programmateriquement en arrière (C).
+
+-----------------------------------------------------------
+
+Question 65 :
+Concernant coroutineScope
+
+A. A. Attend toutes les coroutines enfants [CORRECT]
+B. B. Lance des GlobalScope
+C. C. Propague les exceptions [CORRECT]
+D. D. Bloque le thread
+E. E. Remplace supervisorScope
+
+Réponses correctes : A, C
+Explication : coroutineScope est une fonction de suspension qui crée un sous-scope. Elle attend que tous ses enfants soient finis avant de rendre la main (A). Si un enfant échoue, elle annule tous les autres et propage l'exception (C). (Contrairement à supervisorScope).
+
+-----------------------------------------------------------
+
+Question 67 :
+Concernant ExceptionHandler
+
+A. A. Intercepte les exceptions non catchées [CORRECT]
+B. B. Remplace try/catch
+C. C. Appliqué au scope [CORRECT]
+D. D. Fonctionne avec async
+E. E. Stoppe le thread
+
+Réponses correctes : A, C
+Explication : CoroutineExceptionHandler (CEH) est un élément de contexte (C) qui attrape les exceptions non gérées par ailleurs (A) dans les coroutines 'launch'. Il ne remplace pas try/catch pour la gestion locale.
+
+-----------------------------------------------------------
+
+Question 68 :
+Kotlin Result<T>
+
+A. A. Encapsule succès/échec [CORRECT]
+B. B. Remplace exceptions
+C. C. Immuable [CORRECT]
+D. D. Toujours recommandé
+E. E. Bloque la stacktrace
+
+Réponses correctes : A, C
+Explication : La classe Result encapsule soit une valeur de succès, soit une erreur (Throwable) (A). Elle est une value class (immuable et performante) (C). Elle permet un style de programmation plus fonctionnel sans forcément remplacer toutes les exceptions.
+
+-----------------------------------------------------------
+
+Question 70 :
+Concernant Context
+
+A. A. Activity est un Context [CORRECT]
+B. B. ApplicationContext survit toujours
+C. C. Context peut causer des leaks [CORRECT]
+D. D. Context = View
+E. E. Ne pas stocker Activity [CORRECT]
+
+Réponses correctes : A, C, E
+Explication : Activity hérite de Context (A). Garder une référence statique à une Activity (Context) empêche le Garbage Collector de la nettoyer, causant un Memory Leak majeur (C, E).
+
+-----------------------------------------------------------
+
+Question 73 :
+Concernant les lambdas
+
+A. A. Fonctions anonymes [CORRECT]
+B. B. Toujours inline
+C. C. Supportent capture [CORRECT]
+D. D. Pas de retour
+E. E. Bloquantes
+
+Réponses correctes : A, C
+Explication : Les lambdas sont des fonctions anonymes (A). Elles peuvent capturer des variables de leur portée englobante (C).
+
+-----------------------------------------------------------
+
+Question 74 :
+Kotlin immutabilité
+
+A. A. val préféré [CORRECT]
+B. B. var interdit
+C. C. Favorise thread-safety [CORRECT]
+D. D. Inutile en Android
+E. E. Réduit bugs [CORRECT]
+
+Réponses correctes : A, C, E
+Explication : En Kotlin, on préfère 'val' (read-only) par défaut (A). Les objets immuables sont intrinsèquement thread-safe (C) et réduisent les bugs liés aux changements d'état inattendus (E).
+
+-----------------------------------------------------------
+
+Question 75 :
+Considère le code Kotlin suivant :
+val a = 10 
+var b = a 
+val c: Number = a 
+var d: Int? = null 
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) ?
+
+A. A. a est une constante et ne peut jamais être modifiée [CORRECT]
+B. B. b peut être réassignée car son type est inféré comme Int [CORRECT]
+C. C. c ne peut pas être réassignée car son type explicite est Number
+D. D. d ne peut accepter que null ou des Int [CORRECT]
+E. E. Le typage explicite empêche toute inférence du compilateur
+
+Réponses correctes : A, B, D
+Explication : 'val' déclare une variable en lecture seule (A). 'var' est mutable et 'b' est inféré comme Int (B). 'd' est un Int nullable, donc accepte Int ou null (D).
+
+-----------------------------------------------------------
+
+Question 76 :
+Considère les instructions Kotlin suivantes :
+for (i in 1..5) print(i) 
+for (i in 0 until 5) print(i) 
+for (i in 10 downTo 0 step 2) print(i) 
+Quelle(s) affirmation(s) est/sont correcte(s) ?
+
+A. A. L’opérateur .. inclut la borne supérieure [CORRECT]
+B. B. until exclut la borne supérieure [CORRECT]
+C. C. downTo permet une itération décroissante [CORRECT]
+D. D. step modifie la valeur finale de la borne
+E. E. step définit l’incrément (ou décrément) entre deux valeurs successives [CORRECT]
+
+Réponses correctes : A, B, C, E
+Explication : '..' crée un range inclusif (A). 'until' exclut la fin (B). 'downTo' inverse l'ordre (C). 'step' définit le pas d'itération (E).
+
+-----------------------------------------------------------
+
+Question 77 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant les mots-clés open et final en Kotlin ?
+
+A. A. En Kotlin, les classes sont final par défaut [CORRECT]
+B. B. Une classe marquée open peut être héritée [CORRECT]
+C. C. Une fonction doit être open pour pouvoir être appelée
+D. D. Une fonction open peut être redéfinie (override) dans une sous-classe [CORRECT]
+E. E. Le mot-clé final empêche l’héritage ou la redéfinition [CORRECT]
+
+Réponses correctes : A, B, D, E
+Explication : Contrairement à Java, les classes Kotlin sont fermées (final) par défaut (A). Il faut le mot-clé 'open' pour permettre l'héritage (B) ou l'override de méthodes (D).
+
+-----------------------------------------------------------
+
+Question 78 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant ViewBinding et findViewById ?
+
+A. A. ViewBinding fournit un accès type-safe aux vues [CORRECT]
+B. B. ViewBinding élimine le besoin d’appeler findViewById [CORRECT]
+C. C. findViewById est vérifié à la compilation
+D. D. ViewBinding réduit le risque de NullPointerException [CORRECT]
+E. E. ViewBinding repose sur la réflexion à l’exécution
+
+Réponses correctes : A, B, D
+Explication : ViewBinding génère des références directes et typées aux vues (A), remplaçant findViewById (B). Comme il sait quelles vues sont présentes dans quelles configs (portrait/landscape), il gère mieux la nullabilité (D).
+
+-----------------------------------------------------------
+
+Question 79 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant l’utilisation de startActivity dans une application Android ?
+
+A. A. startActivity permet de lancer une nouvelle Activity via un Intent [CORRECT]
+B. B. Un Context valide est requis pour appeler startActivity [CORRECT]
+C. C. startActivity permet de récupérer directement un résultat
+D. D. startActivity peut être utilisé avec un Intent explicite ou implicite [CORRECT]
+E. E. startActivity gère automatiquement le cycle de vie de l’Activity appelante
+
+Réponses correctes : A, B, D
+Explication : startActivity lance une activité (A) via un Intent (D). C'est une méthode de la classe Context (B). Pour récupérer un résultat, il faudrait utiliser registerForActivityResult (anciennement startActivityForResult).
+
+-----------------------------------------------------------
+
+Question 80 :
+Laquelle (ou lesquelles) des affirmations suivantes est/sont correcte(s) concernant l’utilisation de putExtra et des méthodes getXXXExtra dans les Intent Android ?
+
+A. A. putExtra permet d’ajouter des données supplémentaires à un Intent [CORRECT]
+B. B. getXXXExtra doit correspondre au type exact de la donnée stockée [CORRECT]
+C. C. Un Intent ne peut contenir qu’un seul extra
+D. D. Les extras sont stockés sous forme de paires clé/valeur [CORRECT]
+E. E. getXXXExtra lève systématiquement une exception si la clé n’existe pas
+
+Réponses correctes : A, B, D
+Explication : Les Extras sont un Bundle (clé-valeur) (D) attaché à l'Intent. On ajoute avec putExtra (A). Il faut récupérer avec la méthode typée correspondante (getIntExtra, getStringExtra...) (B).
+
+-----------------------------------------------------------
+
